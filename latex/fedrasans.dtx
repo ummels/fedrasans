@@ -99,7 +99,7 @@
 %</driver>
 %\fi
 %
-% \CheckSum{0}
+% \CheckSum{1102}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -1288,7 +1288,7 @@
 % multiple times.
 %    \begin{macrocode}
 %<*fontdef>
-\ifx\fdrss@variant\@undefined\else\endinput\fi
+\ifx\fdrss@ffamily\@undefined\else\endinput\fi
 %    \end{macrocode}
 % We distinguish between being loaded directly or via |\usepackage| in the
 % preamble by checking |\@nodocument|.
@@ -1318,7 +1318,7 @@
 %
 % These are the default values if it is impossible to process options.
 %    \begin{macrocode}
-\newcommand\fdrss@variant{}
+\newcommand\fdrss@ffamily{FedraSansPro}
 \newcommand\fdrss@mweight@normal{Book}
 \newcommand\fdrss@mweight@small{Book}
 \newcommand\fdrss@bweight@normal{Medium}
@@ -1335,7 +1335,7 @@
     \define@choicekey*{fedrasans-fd.sty}{#1}[\@tempa\@tempb]{#2}{#3}%
   }
   \fdrss@fd@boolkey{alt}{%
-    \iffdrss@fd@alt\renewcommand\fdrss@variant{Alt}\fi%
+    \iffdrss@fd@alt\renewcommand\fdrss@ffamily{FedraSansAltPro}\fi%
   }
   \fdrss@fd@choicekey{normalweight}{book,demi,auto}{%
     \ifcase\@tempb\relax
@@ -1367,7 +1367,7 @@
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-\fdrss@makeglobal{fdrss@variant}
+\fdrss@makeglobal{fdrss@ffamily}
 \fdrss@makeglobal{fdrss@mweight@normal}
 \fdrss@makeglobal{fdrss@mweight@small}
 \fdrss@makeglobal{fdrss@bweight@normal}
@@ -1427,12 +1427,12 @@
   \ifx\@@tempa\empty\ifx\@@tempb\empty
     \DeclareFontShape{#1}{FedraSansPro-#2}{#3}{#4}{%
       <-7.1>s*[\fdrss@scale]%
-        FedraSansAltPro-%
+        \fdrss@ffamily-%
         \fdrss@useconfig{#1}{weight/small}{#3}%
         \fdrss@useconfig{#1}{italic}{#4}-#2%
         \fdrss@useconfig{#1}{shape}{#4}-#1%
       <7.1->s*[\fdrss@scale]%
-        FedraSansAltPro-%
+        \fdrss@ffamily-%
         \fdrss@useconfig{#1}{weight/normal}{#3}%
         \fdrss@useconfig{#1}{italic}{#4}-#2%
         \fdrss@useconfig{#1}{shape}{#4}-#1%
