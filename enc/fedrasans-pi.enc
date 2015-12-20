@@ -1,0 +1,63 @@
+% TeX extra characters encoding
+% CODINGSCHEME FONTSPECIFIC
+%
+/FedraSansProOrnamentEncoding [
+% 0x00
+/zero.opencirc /uni2780 /uni2781 /uni2782
+/uni2783 /uni2784 /uni2785 /uni2786
+/uni2787 /uni2788 /zero.opencirc_init /one.opencirc_init
+/two.opencirc_init /three.opencirc_init /four.opencirc_init /five.opencirc_init
+% 0x10
+/six.opencirc_init /seven.opencirc_init /eight.opencirc_init /nine.opencirc_init
+/zero.opencirc_medi /one.opencirc_medi /two.opencirc_medi /three.opencirc_medi
+/four.opencirc_medi /five.opencirc_medi /six.opencirc_medi /seven.opencirc_medi
+/eight.opencirc_medi /nine.opencirc_medi /zero.opencirc_fina /one.opencirc_fina
+% 0x20
+/two.opencirc_fina /three.opencirc_fina /four.opencirc_fina /five.opencirc_fina
+/six.opencirc_fina /seven.opencirc_fina /eight.opencirc_fina /nine.opencirc_fina
+/zero.closecirc /uni278A /uni278B /uni278C
+/uni278D /uni278E /uni278F /uni2790
+% 0x30
+/uni2791 /uni2792 /zero.closecirc_init /one.closecirc_init
+/two.closecirc_init /three.closecirc_init /four.closecirc_init /five.closecirc_init
+/six.closecirc_init /seven.closecirc_init /eight.closecirc_init /nine.closecirc_init
+/zero.closecirc_medi /one.closecirc_medi /two.closecirc_medi /three.closecirc_medi
+% 0x40
+/four.closecirc_medi /five.closecirc_medi /six.closecirc_medi /seven.closecirc_medi
+/eight.closecirc_medi /nine.closecirc_medi /zero.closecirc_fina /one.closecirc_fina
+/two.closecirc_fina /three.closecirc_fina /four.closecirc_fina /five.closecirc_fina
+/six.closecirc_fina /seven.closecirc_fina /eight.closecirc_fina /nine.closecirc_fina
+% 0x50
+/anoteleia /uni25AA /uni25AB /uni25A0 /uni25A1 /uni25B8 /uni25C2 /uni25B9
+/uni25C3 /uni25B6 /uni25C0 /uni25B7 /uni25C1 /uni25BA /uni25C4 /uni25BB
+% 0x60
+/uni25C5 /uni25CF /uni25CB /uni2981 /uni25C9 /uni25CE /uni2665 /uni2661
+/uni24CA.pln /uni267E.pln /uni2708 /uni2708.alt /uni2139 /uni263A /uni2605 /uni235F
+% 0x70
+/uni2192 /uni2190 /arrowup /arrowdown /uni2197 /uni2196 /uni2199 /uni2198
+/uni261B /uni261A /uni261E /uni261C /uni261D /uni261F /uni2610 /uni2611
+% 0x80
+/uni2713 /uni2612 /uni2709 /uni2641 /uni270E /uni231A /uni2740 /uni213B
+/uni260F /orn.01 /orn.02 /orn.03 /orn.04 /orn.05 /orn.06 /orn.07
+% 0x90
+/orn.08 /orn.09 /orn.10 /orn.11 /orn.12 /orn.13 /orn.14 /orn.15
+/orn.16 /orn.17 /uni301C /orn.19 /orn.20 /.notdef /.notdef /.notdef
+% 0xA0
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+% 0xB0
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+% 0xC0
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+% 0xD0
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+% 0xE0
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+% 0xF0
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def

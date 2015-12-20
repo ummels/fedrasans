@@ -1,0 +1,1563 @@
+% \iffalse meta-comment
+%
+% Copyright (c) 2015 by Michael Ummels <michael.ummels@rwth-aachen.de>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Michael Ummels.
+%
+% This work consists of the files fedrasans.dtx, fedrasans.ins and
+% the derived files listed in fedrasans.ins as well as the
+% documentation file fedrasans.pdf.
+%
+% \fi
+%
+%\iffalse
+%<*driver>
+\ProvidesFile{fedrasans.dtx}[2015/12/20 v1.0 LaTeX support package for Fedra Sans Pro]
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}
+%<package>\ProvidesPackage{fedrasans}[2015/12/20 v1.0 LaTeX support package for Fedra Sans Pro]
+%<mtcfg>\ProvidesFile{mt-FedraSansPro.cfg}[2015/12/20 v1.0 microtype config file for Fedra Sans Pro]
+%<fontdef>\ProvidesFile{fedrasans-fd.sty}[2015/12/20 v1.0 font definition macros for Fedra Sans Pro]
+%<ot1&lf>\ProvidesFile{OT1FedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for OT1/FedraSansPro-LF]
+%<ot1&osf>\ProvidesFile{OT1FedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for OT1/FedraSansPro-OsF]
+%<ot1&tlf>\ProvidesFile{OT1FedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for OT1/FedraSansPro-TLF]
+%<ot1&tosf>\ProvidesFile{OT1FedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for OT1/FedraSansPro-TOsF]
+%<t1&lf>\ProvidesFile{T1FedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for T1/FedraSansPro-LF]
+%<t1&osf>\ProvidesFile{T1FedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for T1/FedraSansPro-OsF]
+%<t1&tlf>\ProvidesFile{T1FedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for T1/FedraSansPro-TLF]
+%<t1&tosf>\ProvidesFile{T1FedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for T1/FedraSansPro-TOsF]
+%<ts1&lf>\ProvidesFile{TS1FedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for TS1/FedraSansPro-LF]
+%<ts1&osf>\ProvidesFile{TS1FedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for TS1/FedraSansPro-OsF]
+%<ts1&tlf>\ProvidesFile{TS1FedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for TS1/FedraSansPro-TLF]
+%<ts1&tosf>\ProvidesFile{TS1FedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for TS1/FedraSansPro-TOsF]
+%<ly1&lf>\ProvidesFile{LY1FedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for LY1/FedraSansPro-LF]
+%<ly1&osf>\ProvidesFile{LY1FedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for LY1/FedraSansPro-OsF]
+%<ly1&tlf>\ProvidesFile{LY1FedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for LY1/FedraSansPro-TLF]
+%<ly1&tosf>\ProvidesFile{LY1FedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for LY1/FedraSansPro-TOsF]
+%<qx&lf>\ProvidesFile{QXFedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for QX/FedraSansPro-LF]
+%<qx&osf>\ProvidesFile{QXFedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for QX/FedraSansPro-OsF]
+%<qx&tlf>\ProvidesFile{QXFedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for QX/FedraSansPro-TLF]
+%<qx&tosf>\ProvidesFile{QXFedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for QX/FedraSansPro-TOsF]
+%<t5&lf>\ProvidesFile{T5FedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for T5/FedraSansPro-LF]
+%<t5&osf>\ProvidesFile{T5FedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for T5/FedraSansPro-OsF]
+%<t5&tlf>\ProvidesFile{T5FedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for T5/FedraSansPro-TLF]
+%<t5&tosf>\ProvidesFile{T5FedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for T5/FedraSansPro-TOsF]
+%<oml&lf>\ProvidesFile{OMLFedraSansPro-LF.fd}[2015/12/20 v1.0 font definitions for OML/FedraSansPro-LF]
+%<oml&osf>\ProvidesFile{OMLFedraSansPro-OsF.fd}[2015/12/20 v1.0 font definitions for OML/FedraSansPro-OsF]
+%<oml&tlf>\ProvidesFile{OMLFedraSansPro-TLF.fd}[2015/12/20 v1.0 font definitions for OML/FedraSansPro-TLF]
+%<oml&tosf>\ProvidesFile{OMLFedraSansPro-TOsF.fd}[2015/12/20 v1.0 font definitions for OML/FedraSansPro-TOsF]
+%<u&extra>\ProvidesFile{UFedraSansPro-Extra.fd}[2015/12/20 v1.0 font definitions for U/FedraSansPro-Extra]
+%<u&orn>\ProvidesFile{UFedraSansPro-Pi.fd}[2015/12/20 v1.0 font definitions for U/FedraSansPro-Pi]
+%<u&bb>\ProvidesFile{UFedraSansPro-BB.fd}[2015/12/20 v1.0 font definitions for U/FedraSansPro-BB]
+%<*driver>
+\documentclass{ltxdoc}
+
+\usepackage[LY1]{fontenc}
+\usepackage{lmodern}
+\usepackage[alt,sfdefault,footnotemarks]{fedrasans}
+\usepackage[scaled=1.05]{inconsolata}
+\usepackage[british]{babel}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{floatrow}
+\usepackage{hypdoc}
+\usepackage{microtype}
+
+\hypersetup{
+  bookmarksnumbered,
+  colorlinks=false,
+  pdfborder={0 0 0},
+  pdftitle={The fedrasans package},
+  pdfauthor={Michael Ummels}
+}
+\linespread{1.1}
+
+\newcommand*{\pkg}[1]{\mbox{#1}}
+\newcommand*{\option}[1]{\mbox{\texttt{#1}}}
+\newcommand*{\file}[1]{\texttt{#1}}
+\newcommand*{\acro}[1]{#1}
+\providecommand{\figureversion}[1]{}
+
+\renewcommand{\theCodelineNo}%
+  {\normalfont\figureversion{tab}\scriptsize\arabic{CodelineNo}}
+
+\floatsetup[table]{capposition=top}
+
+\begin{document}
+\DocInput{fedrasans.dtx}
+\end{document}
+%</driver>
+%\fi
+%
+% \CheckSum{0}
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+% \GetFileInfo{fedrasans.dtx}
+%
+% \title{\LaTeX\ support for Fedra Sans Pro}
+% \author{Michael Ummels}
+% \date{\fileversion\ -- \filedate}
+% \maketitle
+%
+% \begin{abstract}
+% This document describes the \pkg{fedrasans} package, which
+% provides \LaTeX\ support for the commercial
+% Fedra Sans Pro fonts in both text and math mode.
+% \end{abstract}
+%
+% \tableofcontents
+%
+% \section{Overview}
+%
+% The \pkg{fedrasans} package provides \LaTeX\ support for the commercial
+% Fedra\textregistered\ Sans Pro fonts\footnote{Fedra is
+% a registered trademark of Typotheque VOF.} from
+% Typotheque\footnote{\url{http://www.typotheque.com/fonts/}}.
+% You can load this package by adding
+% \begin{quote}
+%   |\usepackage|\oarg{options}|{fedrasans}|
+% \end{quote}
+% to the preamble of your document. If no options are specified,
+% this will change the default sans-serif font to Fedra Sans Pro;
+% use the option \option{alt} to select Fedra Sans Alt Pro.
+% In order to use Fedra Sans as the main font for the document
+% (not only when |\sffamily| is selected), you can use the option
+% |sfdefault|.
+% For all available options, see Section~\ref{sec:options}.
+%
+% \subsubsection*{Acknowledgements}
+%
+% See the acknowledgements for the \pkg{fedraserif} package, on
+% which this package is based.
+%
+% \section{Interferences with other packages}
+%
+% In order to use Fedra Sans as a math font, you need to have the
+% \pkg{fdsymbol} package (version~0.7 or higher) installed. Apart from
+% \pkg{fdsymbol}, the \pkg{fedrasans} package automatically loads the
+% packages \pkg{textcomp} and (if math support is enabled) \pkg{amsmath}.
+% Additionally, the \pkg{fontaxes} package is loaded if it is present in
+% your \LaTeX\ installation.
+% If you want to pass options to these packages, you can
+% either load these packages beforehand, or you can include the options
+% in the |\documentclass| command. If the \option{math} option is
+% used, the \pkg{fedrasans} package is \emph{not} compatible with
+% \pkg{amssymb} and \pkg{amsfonts} (since \pkg{fdsymbol} is not).
+%
+% \section{Options}\label{sec:options}
+%
+% All package options are set using a \meta{key}|=|\meta{value} syntax.
+% Boolean options accept |true| and |false| as values, and setting a Boolean
+% key without a value is equivalent to setting it to |true|.
+% Table~\ref{tab:options} lists all option keys of the \pkg{fedrasans}
+% package with their possible values; values that are marked with an asterisk
+% correspond to the default behaviour of the package.
+% \begin{table}
+% \centering
+% \begin{tabular}{@{}lll@{}}
+% \toprule
+% Key & Values & Section \\
+% \midrule
+% |alt| & |true|, |false|* & \ref{sec:variants} \\
+% |boldweight| & |Medium|*, |Bold|, |auto| & \ref{sec:weights} \\
+% |fedrabb| & |true|, |false|* & \ref{sec:mathbb} \\
+% |footnotemarks| & |true|, |false|* & \ref{sec:footnotes} \\
+% |figures| & |lining|* (|lf|), |text| (|osf|) & \ref{sec:figures} \\
+% |math-style| & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
+% |math| & |true|, |false|* & \ref{sec:math} \\
+% |normalweight| & |Book|*, |Demi|, |auto| & \ref{sec:weights} \\
+% |sfdefault| & |true|, |false|* & \\
+% |stdmathdigits| & |true|, |false|* & \ref{sec:mathdigits} \\
+% \bottomrule
+% \end{tabular}
+% \caption{\label{tab:options}Summary of options}
+% \end{table}
+%
+% \section{Font selection}\label{sec:fonts}
+%
+% \subsection{Variants}\label{sec:variants}
+%
+% Fedra Sans Pro comes in two variants: the alternative variant (Fedra Sans
+% Alt Pro) shown here is a bit more conservative than the original variant,
+% which has a lowercase f that extends under the baseline and dots that look
+% like diamonds, to name a few of its features.
+% By default, the package use the original variant. If you prefer the
+% alternative variant, you can select it by passing the option |alt|.
+%
+% \subsection{Encodings}\label{sec:encodings}
+%
+% The package currently supports the \acro{OT1}, \acro{T1}, \acro{LY1},
+% \acro{QX} and \acro{T5} encodings for typesetting text with Latin
+% characters, as well as the \acro{TS1} encoding for typesetting text
+% symbols.
+% For typesetting text with accented characters, it~is strongly
+% recommended to change the default font encoding from~\acro{OT1}
+% to \acro{T1} or one of the other encodings. This can be achieved
+% by putting |\usepackage[T1]{fontenc}| in the preamble of your
+% document.
+%
+% \subsection{Weights}\label{sec:weights}
+%
+% All fonts of the Fedra Sans Pro family come in five weights, which are
+% (in increasing order) Light, Book, Demi, Medium and Bold, shown in
+% Table~\ref{tab:weights}.
+% \begin{table}
+% \centering
+% \newcommand\pangram{A Quick Brown Fox Jumps Over The Lazy Dog.}
+% \begin{tabular}{@{}lll@{}}
+% \toprule
+% Weight & Series & Example \\
+% \midrule
+% Light & |l| & \fontseries{l}\selectfont\pangram \\
+% Book & |sl| & \fontseries{sl}\selectfont\pangram \\
+% Demi & |md| & \fontseries{md}\selectfont\pangram \\
+% Medium & |sb| & \fontseries{sb}\selectfont\pangram \\
+% Bold & |ub| & \fontseries{ub}\selectfont\pangram \\
+% \bottomrule
+% \end{tabular}
+% \caption{\label{tab:weights}Summary of font weights}
+% \end{table}
+% Of these, Book and Demi can be used as the standard text font, while Medium
+% and Bold can be used for bold text. The option keys |normalweight| and
+% |boldweight| allow to control which weights are used for the standard
+% \LaTeX\ font series |m| and |b| (or |bx|), selected by |\mdseries| and
+% |\bfseries|, respectively. For example, to use the Demi
+% weight as the standard text font, use the option |normalweight=Demi|.
+% By default, only the Book and the Medium weights are used. Additionally,
+% both keys can be set to the value |auto|, which selects a weight depending
+% on the font size (Book and Medium for normal and large sizes, Demi and
+% Bold for small sizes). Independently of these options, all weights can
+% accessed using |\fontseries|. For instance, the Light weight can be
+% accessed using the command |\fontseries{l}|.
+%
+% \subsection{Shapes}\label{sec:shapes}
+%
+% In addition to the normal small caps shapes |sc| and |scit|, there are
+% letterspaced versions |ssc| and |sscit| (see Table~\ref{tab:shapes}).
+% \begin{table}
+% \centering
+% \newcommand\pangram{A Quick Brown Fox Jumps Over The Lazy Dog.}
+% \begin{tabular}{@{}ll@{}}
+% \toprule
+% Shape & Example \\
+% \midrule
+% |n| & \pangram \\
+% |it| & \textit{\pangram} \\
+% |sc| & \textsc{\pangram} \\
+% |ssc| & \textssc{\pangram} \\
+% |scit| & \textit{\textsc{\pangram}} \\
+% |sscit| & \textit{\textssc{\pangram}} \\
+% \bottomrule
+% \end{tabular}
+% \caption{\label{tab:shapes}Summary of font shapes}
+% \end{table}
+%
+% If the \pkg{fontaxes} package is available, you can use the commands
+% |\sscshape| and |\textssc|\marg{text} to switch to letterspaced small caps.
+%
+% \subsection{Figures}\label{sec:figures}
+%
+% Fedra Sans Pro offers four main figure versions (see \ref{tab:figures}).
+% On the one hand, one
+% can choose between \emph{lining figures} and \emph{text figures}, also known
+% as \emph{old-style figures}.
+% On the other hand, one can choose between
+% \emph{proportional figures} and \emph{tabular figures}.
+% \begin{table}
+% \centering
+% \begin{tabular}{@{}lll@{}}
+% \toprule
+% & Lining figures & Text figures \\
+% \midrule
+% Proportional & \figureversion{lining,proportional}0123456789
+%  & \figureversion{text,proportional}0123456789 \\
+% Tabular & \figureversion{lining,tabular}0123456789
+%  & \figureversion{text,tabular}0123456789 \\
+% \bottomrule
+% \end{tabular}
+% \caption{\label{tab:figures}Summary of figure versions}
+% \end{table}
+%
+% By default, proportional lining figures are used throughout the document.
+% If you want to use text figures instead, use the option |figures=text| or
+% |figures=osf|.
+%
+% Assuming that the \pkg{fontaxes} package is installed on your system, you
+% can use
+% the command |\figureversion| to switch between different figure
+% versions inside the document. Possible arguments are |text| or |osf|
+% for text figures, |lining| or |lf| for lining figures, |tabular| or |tab|
+% for tabular figures, and |proportional| or |prop| for proportional figures.
+% Note that you can combine several arguments. For example, the command
+% |\figureversion{osf,tabular}| selects tabular text figures.
+%
+% Small and slanted fractions are fractions with a height matching the font's
+% body size; they can be accessed via:
+% \begin{quote}
+% \begin{tabular}{@{}ll}
+%   |\smallfrac|\marg{numerator}\marg{denominator}& \smallfrac{3}{17} \\
+%   |\slantfrac|\marg{numerator}\marg{denominator}& \slantfrac{3}{17}
+% \end{tabular}
+% \end{quote}
+% Note that only figures can be used for \meta{numerator} and
+% \meta{denominator}.
+%
+% Finally, Fedra Sans Pro offers so-called bullet figures, which are
+% enclosed by a circle; they can be accessed via:
+% \begin{quote}
+% \begin{tabular}{@{}ll@{ }l}
+%   |\openbullet|\marg{number} & \openbullet{1} & \openbullet{234} \\
+%   |\closedbullet|\marg{number} & \closedbullet{5} & \closedbullet{678}
+% \end{tabular}
+% \end{quote}
+% As for small and slanted fractions, only figures can be used for
+% \meta{number}.
+%
+% \subsection{Footnotes}\label{sec:footnotes}
+%
+% By setting the option |footnotemarks|, footnote marks are set using special
+% characters designed for this purpose, i.e.\ 
+% {\fontfamily{FedraSansPro-Extra}\fontencoding{U}\selectfont 1,a} instead
+% of \textsuperscript{1,a}. However, this only works for footnote marks that
+% consist of figures and the lowercase letters a--z.
+%
+% \subsection{Dingbats}
+%
+% Assuming that the \pkg{pifont} package is loaded, you can access Fedra
+% Serif's ornamental characters via:
+% \begin{quote}
+%   |\Pisymbol{FedraSansPro-Pi}|\marg{number}
+% \end{quote}
+% The available glyphs are listed in Table~\ref{table:dingbats}.
+% \begin{table}
+% \figureversion{tabular}\centering
+% \newcommand*\showding[1]{#1 & \Pisymbol{FedraSansPro-Pi}{#1}}\relax
+% \begin{tabular}{@{}*{4}{r@{\quad}l}@{}}
+% \toprule
+%  number & glyph & number & glyph & number & glyph & number & glyph\\
+% \midrule
+% \showding{100} & \showding{115} & \showding{130} & \showding{145}\\
+% \showding{101} & \showding{116} & \showding{131} & \showding{146}\\
+% \showding{102} & \showding{117} & \showding{132} & \showding{147}\\
+% \showding{103} & \showding{118} & \showding{133} & \showding{148}\\
+% \showding{104} & \showding{119} & \showding{134} & \showding{149}\\
+% \showding{105} & \showding{120} & \showding{135} & \showding{150}\\
+% \showding{106} & \showding{121} & \showding{136} & \showding{151}\\
+% \showding{107} & \showding{122} & \showding{137} & \showding{152}\\
+% \showding{108} & \showding{123} & \showding{138} & \showding{153}\\
+% \showding{109} & \showding{124} & \showding{139} & \showding{154}\\
+% \showding{110} & \showding{125} & \showding{140} & \showding{155}\\
+% \showding{111} & \showding{126} & \showding{141} & \showding{156}\\
+% \showding{112} & \showding{127} & \showding{142} & \\
+% \showding{113} & \showding{128} & \showding{143} & \\
+% \showding{114} & \showding{129} & \showding{144} & \\
+% \bottomrule
+% \end{tabular}
+% \caption{\label{table:dingbats}Dingbats available with
+%  the \pkg{fedrasans} package}
+% \end{table}
+%
+% \subsection{Additional notes}
+%
+% Fedra Sans Pro implements a large subset of the glyphs made available
+% by the \acro{TS1} encoding. However, the following glyphs are missing:
+% \begin{quote}
+% \begin{tabular}{@{}lll}
+%   |\textdblhyphen| & |\textlangle| & |\textrangle| \\
+%   |\textdivorced| & |\textdied| & |\textleaf| \\
+%   |\textmarried| & |\textmusicalnote| & |\textdblhyphenchar| \\
+%   |\textdollaroldstyle| & |\textcentoldstyle| & |\textacutedbl| \\
+%   |\textgravedbl| & |\textguarani| & |\textrecipe| \\
+%   |\textpertenthousand| & |\textpilcrow| & |\textbaht| \\
+%   |\textdiscount| & |\textopenbullet| & |\textlquill| \\
+%   |\textrquill| & |\textcopyleft| & |\textreferencemark|
+% \end{tabular}
+% \end{quote}
+% In addition to the monetary symbols defined by the \acro{TS1} encoding,
+% the following currency symbols are available:
+% \begin{quote}
+% \newcommand*\sym[1]{#1 & \ttfamily\string#1}%
+% \begin{tabular}{@{}*2{ll@{\qquad}}ll@{}}
+%   \sym\textcruzeiro & \sym\textfranc & \sym\textmill \\
+%   \sym\textpeseta & \sym\textrupee & \sym\textsheqel \\
+%   \sym\textkip & \sym\texttugrik & \sym\texthryvnia
+% \end{tabular}
+% \end{quote}
+%
+% \section{Math support}\label{sec:math}
+%
+% By default, we only change the math font to Fedra Sans Pro (with mathematical
+% symbols taken from FdSymbol) if the option |sfdefault| has been selected.
+% In order to allow for a more fine-grained control, you can enable or disable
+% using the |math| option. Note that all other options described in this section
+% only have an effect if math support is enabled.
+%
+% \subsection{Letters}\label{sec:mathletters}
+%
+% In \TeX\ and \LaTeX, uppercase Greek letters are traditionally set
+% upright in math mode, even when they are used as variables.
+% This differs from the \acro{ISO} standards \acro{ISO31-0:1992} to
+% \acro{ISO31-13:1992}, which mandate italics in this case. While
+% the package employs the \TeX\ tradition by default, you can select
+% the \acro{ISO} behaviour by setting the option |math-style=iso|.
+% Independently of this option, you can alyways select upright and
+% italic greek letters using the commands |\upalpha|, |\italpha|,
+% |\upGamma|, |\itGamma|, etc. Additionally, the |math-style| key
+% can take the value |french|, in which case all Greek and
+% uppercase roman letters are typeset upright. For an illustration
+% of the differences between the three values for |math-style|,
+% see Table~\ref{tab:math-styles}.
+% \begin{table}
+% \centering
+% \begin{tabular}{@{}ll@{}}
+% \toprule
+% |math-style| & example \\
+% \midrule
+% |tex| & $a,b,\ldots,A,B,\ldots,\alpha,\beta,\ldots,%
+%   \upGamma,\upDelta,\ldots$ \\
+% |iso| & $a,b,\ldots,A,B,\ldots,\alpha,\beta,\ldots,%
+%   \itGamma,\itDelta,\ldots$ \\
+% |french| & $a,b,\ldots,\mathrm{A},\mathrm{B},\ldots,%
+%   \upalpha,\upbeta,\ldots,\upGamma,\upDelta,\ldots$ \\
+% \bottomrule
+% \end{tabular}
+% \caption{\label{tab:math-styles}The different styles for letters
+% in math mode}
+% \end{table}
+%
+% The \pkg{fedrasans} package provides all letters available in
+% math mode with the Computer Modern fonts, with the exception of
+% |\varpi| and |\varrho|, which have the same shape as |\pi| and |\rho|,
+% respectively. Additionally, the following letters and letter-like
+% symbols are can be typeset:
+% \begin{quote}
+% \newcommand*\sym[1]{$#1$ & \ttfamily\string#1}%
+% \begin{tabular}{@{}*2{ll@{\qquad}}ll@{}}
+%   \sym\varbeta\footnotemark & \sym\digamma\footnotemark[\arabic{footnote}] &
+%   \sym\backepsilon\footnotemark[\arabic{footnote}] \\
+%   \sym\varbackepsilon\footnotemark[\arabic{footnote}] & \sym\hslash &
+%   \sym\lambdabar \\
+%   \sym\lambdaslash & \sym\eth\footnotemark[\arabic{footnote}] &
+%   \sym\slashedzero \\ 
+%   \sym\mho & \sym\upell & \sym\uphbar
+% \end{tabular}
+% \footnotetext{The shape of the symbol is different if the option
+% \option{math-style=french} is selected. Upright and italic shapes are
+% also available
+% directly via the commands \texttt{\string\up}\meta{cmd} and
+% \texttt{\string\it}\meta{cmd}, respectively.}
+% \end{quote}
+%
+% \subsection{Digits}\label{sec:mathdigits}
+%
+% By default, digits in math mode are typeset in the default figure version
+% for text mode (as~selected by the |figures| key). To use lining figures
+% in math mode even if |figures=text| is active, set the option
+% |stdmathdigits|.
+%
+% Apart from the standard math versions |normal| and |bold|, the package
+% introduces two new math versions |tabular| and |boldtabular|, in which
+% digits are typeset as tabular figures.
+%
+% \subsection{Blackboard characters}\label{sec:mathbb}
+%
+% If you also have the \pkg{fedraserif} package installed, you can
+% use the option |\mathbb| to change the math blackboard alphabet
+% to Fedra Serif. See the documentation of the \pkg{fedraserif} package
+% for more information.
+%
+% \section{\acro{NFSS} classification}
+%
+% Table~\ref{tab:nfss} lists all fonts made available with
+% this package. Parenthesised combinations are provided via substitutions.
+% \begin{table}
+% \let\>=\\%
+% \begin{tabular}{@{}p{5em}p{11em}p{6.5em}p{11.5em}@{}}
+%   \toprule
+%   Encoding & Family & Series & Shape \\
+%   \midrule
+%   \raggedright \acro{OT1}, \acro{T1}, \acro{TS1}, \acro{LY1},
+%   \acro{QX}, \acro{T5} &
+%   FedraSansPro-LF, FedraSansPro-OsF, FedraSansPro-TLF,
+%   FedraSansPro-TOsF &
+%   l, sl, m, md,\> b (bx), sb, ub &
+%   n, it (sl),\>
+%   sc, scit (scsl),\>
+%   ssc, sscit (sscsl) \\
+%   \addlinespace
+%   \midrule
+%   \addlinespace
+%   \acro{OML} &
+%   FedraSansPro-TOsF
+%   (FedraSansPro-LF, FedraSansPro-OsF, FedraSansPro-TLF) &
+%   l, sl, m, md,\> b (bx), sb, ub &
+%   n, it \\
+%   \addlinespace
+%   \midrule
+%   \addlinespace
+%   \acro{U} &
+%   FedraSansPro-Extra &
+%   l, sl, m, md,\> b (bx), sb, ub &
+%   n, it (sl) \\
+%   \addlinespace
+%   \midrule
+%   \addlinespace
+%   \acro{U} &
+%   FedraSansPro-Pi &
+%   l, sl, m, md,\> b (bx), sb, ub &
+%   n \\
+%   \addlinespace
+%   \bottomrule
+% \end{tabular}
+% \caption{\label{tab:nfss}NFSS classification}
+% \end{table}
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \subsection{Options}
+%
+% We use \pkg{xkeyval}'s key mechanism to declare all options.
+%    \begin{macrocode}
+%<*package>
+\RequirePackage{xkeyval}
+\newcommand*\fdrss@boolkey[2]{%
+  \define@boolkey{fedrasans.sty}[fdrss@]{#1}[true]{#2}%
+}
+\newcommand*\fdrss@choicekey[3]{%
+  \define@choicekey*{fedrasans.sty}{#1}[\@tempa\@tempb]{#2}{#3}%
+}
+\newif\iffdrss@text
+\fdrss@texttrue
+\newif\iffdrss@math
+\fdrss@mathfalse
+%    \end{macrocode}
+%
+% \subsubsection*{Font selection}
+%
+% The package \pkg{fedrasans-fd} adapts the font definitions to the requested
+% font set (see Section~\ref{sec:fontdef}). So we simply pass on the relevant
+% options. Additional care has to be taken to pass the right options to
+% \pkg{fdsymbol}.
+%    \begin{macrocode}
+\fdrss@boolkey{alt}{%
+  \PassOptionsToPackage{alt=#1}{fedrasans-fd}%
+}
+\fdrss@choicekey{normalweight}{book,demi,auto}{%
+  \PassOptionsToPackage{normalweight=#1}{fedrasans-fd}%
+  \ifcase\@tempb\relax
+    \PassOptionsToPackage{normalweight=book}{fdsymbol}%
+  \or
+    \PassOptionsToPackage{normalweight=regular}{fdsymbol}%
+  \or
+    \PassOptionsToPackage{normalweight=auto}{fdsymbol}%
+  \fi
+}
+\fdrss@choicekey{boldweight}{medium,bold,auto}{%
+  \PassOptionsToPackage{boldweight=#1}{fedrasans-fd}%
+  \PassOptionsToPackage{boldweight=#1}{fdsymbol}%
+}
+%    \end{macrocode}
+% The next option sets the default font to a sans-serif font.
+%    \begin{macrocode}
+\fdrss@boolkey{sfdefault}{%
+  \iffdrss@sfdefault\renewcommand{\familydefault}{\sfdefault}\fdrss@mathtrue\fi%
+}
+%    \end{macrocode}
+% The next option toggles the math font setup.
+%    \begin{macrocode}
+\fdrss@boolkey{math}{%
+  \iffdrss@math\fdrss@mathtrue\else\fdrss@mathfalse\fi%
+}
+%    \end{macrocode}
+%
+% \subsubsection*{Figure style}
+%
+%    \begin{macrocode}
+\newcommand\fdrss@family{FedraSansPro}
+\newcommand\fdrss@textfig{LF}
+\newcommand\fdrss@mathfig{\fdrss@textfig}
+\newcommand\fdrss@textfamily{\fdrss@family-\fdrss@textfig}
+\newcommand\fdrss@mathfamily{\fdrss@family-\fdrss@mathfig}
+\newcommand\fdrss@mathtfamily{\fdrss@family-T\fdrss@mathfig}
+\newcommand\fdrss@mathshape{it}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\fdrss@choicekey{figures}{text,osf,lining,lf}{%
+  \ifcase\@tempb\relax
+    \renewcommand\fdrss@textfig{OsF}%
+  \or    
+    \renewcommand\fdrss@textfig{OsF}%
+  \or
+    \renewcommand\fdrss@textfig{LF}%
+  \or
+    \renewcommand\fdrss@textfig{LF}%
+  \fi
+}
+\fdrss@boolkey{stdmathdigits}{%
+  \iffdrss@stdmathdigits
+    \renewcommand\fdrss@mathfig{LF}%
+  \fi
+}
+%    \end{macrocode}
+%
+% \subsubsection*{Math styles}
+%
+%    \begin{macrocode}
+\newif\iffdrss@greek@upper@upright
+\newif\iffdrss@greek@lower@upright
+\fdrss@choicekey{math-style}{tex,iso,french}{%
+  \ifcase\@tempb\relax
+    \fdrss@greek@upper@uprighttrue
+    \fdrss@greek@lower@uprightfalse
+  \or
+    \fdrss@greek@upper@uprightfalse
+    \fdrss@greek@lower@uprightfalse
+  \or
+    \fdrss@greek@upper@uprighttrue
+    \fdrss@greek@lower@uprighttrue
+    \renewcommand\fdrss@mathshape{n}
+  \fi
+}
+%    \end{macrocode}
+%
+% \subsubsection*{Other options}
+%
+% This options redefines the blackboard bold alphabet to use Fedra
+% Serif's blackboard letters.
+%    \begin{macrocode}
+%
+\fdrss@boolkey{fedrabb}{%
+  \iffdrss@fedrabb
+    \renewcommand\fdrss@load@bb{%
+      \DeclareMathAlphabet\mathbb{U}{\fdrsf@family-BB}{m}{n}%
+      \renewcommand\Bbbk{\mathbb{k}}%
+    }%
+  \fi
+}
+\newcommand\fdrss@load@bb{}
+%    \end{macrocode}
+%
+% This option allows to use superior figures for footnote marks.
+% If possible, we use the commands |\deffootnotemark| and |\deffootnote|
+% provided by the KOMA-Script classes to change the formatting of footnote
+% marks. Otherwise, we need to redefine |\@makefnmark|.
+%    \begin{macrocode}
+\fdrss@boolkey{footnotemarks}{%
+  \iffdrss@footnotemarks
+    \@ifundefined{deffootnotemark}{%
+      \def\@makefnmark{%
+        \begingroup
+        \usefont{U}{\fdrss@family-Extra}{m}{n}%
+        \@thefnmark\kern0.1em%
+        \endgroup
+      }%
+    }{%
+      \deffootnotemark{%
+        \begingroup
+        \usefont{U}{\fdrss@family-Extra}{m}{n}%
+        \thefootnotemark
+        \endgroup
+      }%
+    }%
+    \@ifundefined{deffootnote}{}{%
+      \deffootnote[1em]{1.5em}{1em}{%
+        \begingroup
+        \usefont{U}{\fdrss@family-Extra}{m}{n}%
+        \thefootnotemark\kern0.1em%
+        \endgroup
+      }%
+    }%
+  \fi
+}
+%    \end{macrocode}
+%
+% \subsubsection*{Defaults}
+%
+%    \begin{macrocode}
+\ExecuteOptionsX{math-style=tex}
+\ProcessOptionsX\relax
+%    \end{macrocode}
+%
+% \subsection{Font selection}
+%
+%    \begin{macrocode}
+\RequirePackage[scale=0.9]{fedrasans-fd}
+\@ifpackageloaded{textcomp}{}{\RequirePackage{textcomp}}
+\iffdrss@text
+  \renewcommand\sfdefault{\fdrss@textfamily}
+  \DeclareEncodingSubset{TS1}{\fdrss@family-LF}{1}
+  \DeclareEncodingSubset{TS1}{\fdrss@family-TLF}{1}
+  \DeclareEncodingSubset{TS1}{\fdrss@family-OsF}{1}
+  \DeclareEncodingSubset{TS1}{\fdrss@family-TOsF}{1}
+%    \end{macrocode}
+% In order to accomodate ligatures and glyph variants, we had to remove
+% some glyphs from the standard encodings, but most of them can still be
+% accessed through the \acro{TS1} encoding.
+%    \begin{macrocode}
+  \AtBeginDocument{
+    \UndeclareTextCommand{\textcompwordmark}{T1}
+    \UndeclareTextCommand{\textvisiblespace}{T1}
+    \UndeclareTextCommand{\textperthousand}{T1}
+    \UndeclareTextCommand{\textpertenthousand}{T1}
+    \UndeclareTextCommand{\textsterling}{T1}
+    \UndeclareTextCommand{\textsection}{T1}
+    \UndeclareTextCommand{\textmu}{QX}
+    \UndeclareTextCommand{\texteuro}{QX}
+    \UndeclareTextCommand{\textEuro}{QX}
+    \let\textEuro\texteuro
+    \UndeclareTextCommand{\textdagger}{QX}
+    \UndeclareTextCommand{\textdaggerdbl}{QX}
+    \UndeclareTextCommand{\textdegree}{QX}
+    \UndeclareTextCommand{\textsection}{QX}
+    \UndeclareTextCommand{\textregistered}{QX}
+    \UndeclareTextCommand{\copyright}{QX}
+    \let\copyright\textcopyright
+    \UndeclareTextCommand{\textdiv}{QX}
+    \UndeclareTextCommand{\textminus}{QX}
+    \UndeclareTextCommand{\texttimes}{QX}
+    \UndeclareTextCommand{\textpm}{QX}
+    \UndeclareTextCommand{\textbullet}{QX}
+    \UndeclareTextCommand{\textcurrency}{QX}
+    \UndeclareTextCommand{\textperthousand}{QX}
+    \UndeclareTextCommand{\textanglearc}{QX}
+    \UndeclareTextCommand{\textvisiblespace}{T5}
+%    \end{macrocode}
+% Additional currency symbols are stored in empty slots of the TS1 encoding.
+%    \begin{macrocode}
+    \DeclareTextSymbol{\textcruzeiro}{TS1}{192}
+    \DeclareTextSymbol{\textfranc}{TS1}{193}
+    \DeclareTextSymbol{\textmill}{TS1}{194}
+    \DeclareTextSymbol{\textpeseta}{TS1}{195}
+    \DeclareTextSymbol{\textrupee}{TS1}{196}
+    \DeclareTextSymbol{\textsheqel}{TS1}{197}
+    \DeclareTextSymbol{\textkip}{TS1}{198}
+    \DeclareTextSymbol{\texttugrik}{TS1}{199}
+    \DeclareTextSymbol{\texthryvnia}{TS1}{200}
+    \DeclareTextSymbolDefault{\textcruzeiro}{TS1}
+    \DeclareTextSymbolDefault{\textfranc}{TS1}
+    \DeclareTextSymbolDefault{\textmill}{TS1}
+    \DeclareTextSymbolDefault{\textpeseta}{TS1}
+    \DeclareTextSymbolDefault{\textrupee}{TS1}
+    \DeclareTextSymbolDefault{\textsheqel}{TS1}
+    \DeclareTextSymbolDefault{\textkip}{TS1}
+    \DeclareTextSymbolDefault{\texttugrik}{TS1}
+    \DeclareTextSymbolDefault{\texthryvnia}{TS1}
+  }
+\fi
+%    \end{macrocode}
+%
+% The font selection commands such as |\figureversion| and
+% |\textssc| are provided by the \pkg{fontaxes} package.
+%
+%    \begin{macrocode}
+\IfFileExists{fontaxes.sty}{
+  \RequirePackage{fontaxes}[2007/03/31]
+  \let\oldstylenums\textfigures
+}{}
+%    \end{macrocode}
+%
+% \subsection{Math font setup}
+%
+% We use FdSymbol for most mathematical symbols.
+%
+%    \begin{macrocode}
+\iffdrss@math
+  \RequirePackage[scale=0.9,opstyle=sans]{fdsymbol}[2011/11/01]
+%    \end{macrocode}
+%
+% Some math symbols are taken from the text font by \pkg{fdsymbol}.
+% Use the correct math figure version for these.
+%    \begin{macrocode}
+  \renewcommand\fdsy@text[1]{%
+    \ifx\fdsy@bold\math@version
+      \text{\usefont{T1}{\fdrss@mathfamily}{b}{n}#1}%
+    \else
+      \text{\usefont{T1}{\fdrss@mathfamily}{m}{n}#1}%
+    \fi
+  }
+%    \end{macrocode}
+%
+% Redefine the standard math versions |normal| and |bold|.
+%    \begin{macrocode}
+  \DeclareSymbolFont{operators}{T1}{\fdrss@mathfamily}{m}{n}
+  \SetSymbolFont{operators}{bold}{T1}{\fdrss@mathfamily}{b}{n}
+  \DeclareSymbolFont{letters}{OML}{\fdrss@family-TOsF}{m}{\fdrss@mathshape}
+  \SetSymbolFont{letters}{bold}{OML}{\fdrss@family-TOsF}{b}{\fdrss@mathshape}
+  \DeclareMathAlphabet{\mathrm}{T1}{\fdrss@mathfamily}{m}{n}
+  \SetMathAlphabet{\mathrm}{bold}{T1}{\fdrss@mathfamily}{b}{n}
+  \DeclareMathAlphabet{\mathit}{T1}{\fdrss@mathfamily}{m}{it}
+  \SetMathAlphabet{\mathit}{bold}{T1}{\fdrss@mathfamily}{b}{it}
+  \DeclareMathAlphabet{\mathbf}{T1}{\fdrss@mathfamily}{b}{n}
+%    \end{macrocode}
+% Extra math versions |tabular| and |boldtabular|, which use tabular figures
+% instead of proportional ones. These math versions can be useful in tables.
+%    \begin{macrocode}
+  \DeclareMathVersion{tabular}
+  \SetSymbolFont{operators}{tabular}{T1}{\fdrss@mathtfamily}{m}{n}
+  \SetMathAlphabet{\mathrm}{tabular}{T1}{\fdrss@mathtfamily}{m}{n}
+  \SetMathAlphabet{\mathit}{tabular}{T1}{\fdrss@mathtfamily}{m}{it}
+  \SetMathAlphabet{\mathbf}{tabular}{T1}{\fdrss@mathtfamily}{b}{n}
+  \DeclareMathVersion{boldtabular}
+  \SetSymbolFont{operators}{boldtabular}{T1}{\fdrss@mathtfamily}{b}{n}
+  \SetSymbolFont{letters}{boldtabular}{OML}{\fdrss@family-TOsF}{b}{\fdrss@mathshape}
+  \SetMathAlphabet{\mathrm}{boldtabular}{T1}{\fdrss@mathtfamily}{b}{n}
+  \SetMathAlphabet{\mathit}{boldtabular}{T1}{\fdrss@mathtfamily}{b}{it}
+  \SetMathAlphabet{\mathbf}{boldtabular}{T1}{\fdrss@mathtfamily}{b}{n}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+  \DeclareMathAccent{\grave}{\mathalpha}{operators}{"00}
+  \DeclareMathAccent{\acute}{\mathalpha}{operators}{"01}
+  \DeclareMathAccent{\hat}{\mathalpha}{operators}{"02}
+  \DeclareMathAccent{\tilde}{\mathalpha}{operators}{"03}
+  \DeclareMathAccent{\ddot}{\mathalpha}{operators}{"04}
+  \DeclareMathAccent{\mathring}{\mathalpha}{operators}{"06}
+  \DeclareMathAccent{\check}{\mathalpha}{operators}{"07}
+  \DeclareMathAccent{\breve}{\mathalpha}{operators}{"08}
+  \DeclareMathAccent{\bar}{\mathalpha}{operators}{"09}
+  \DeclareMathAccent{\dot}{\mathalpha}{operators}{"0A}
+  \let\hbar\undefined
+  \DeclareMathSymbol{\hbar}{\mathord}{letters}{"AE}
+  \DeclareMathSymbol{\uphbar}{\mathord}{letters}{"B5}
+  \DeclareMathSymbol{\partial}{\mathord}{letters}{"40}
+  \DeclareMathSymbol{\ell}{\mathord}{letters}{"60}
+  \DeclareMathSymbol{\upell}{\mathord}{letters}{"B9}
+  \DeclareMathSymbol{\slashedzero}{\mathord}{letters}{"B8}
+  \let\mho\undefined
+  \DeclareMathSymbol{\mho}{\mathord}{letters}{"BA}
+  \DeclareMathSymbol{\nabla}{\mathord}{letters}{"BB}
+  \DeclareRobustCommand{\lambdabar}{\middlebar\lambda}
+  \DeclareRobustCommand{\lambdaslash}{\middleslash\lambda}
+%    \end{macrocode}
+% Execute the hook set up above to redefine the mathbb alphabet.
+%    \begin{macrocode}
+  \fdrss@load@bb
+%    \end{macrocode}
+%
+% \subsection{Greek and Hebrew letters}
+%
+% We provide three math-mode commands for each Greek letter: for italic, upright
+% and the default.
+%    \begin{macrocode}
+  \newcommand*{\fdrss@greek@capital}[3]{
+    \expandafter\DeclareMathSymbol%
+      \expandafter{\csname it#1\endcsname}{\mathord}{letters}{#2}
+    \expandafter\DeclareMathSymbol%
+      \expandafter{\csname up#1\endcsname}{\mathord}{letters}{#3}
+    \iffdrss@greek@upper@upright
+      \expandafter\let\csname #1\expandafter\endcsname\csname up#1\endcsname
+    \else
+      \expandafter\let\csname #1\expandafter\endcsname\csname it#1\endcsname
+    \fi
+  }
+  \newcommand*{\fdrss@greek@letter}[3]{
+    \expandafter\DeclareMathSymbol%
+      \expandafter{\csname it#1\endcsname}{\mathord}{letters}{#2}
+    \expandafter\DeclareMathSymbol%
+      \expandafter{\csname up#1\endcsname}{\mathord}{letters}{#3}
+    \iffdrss@greek@lower@upright
+      \expandafter\let\csname #1\expandafter\endcsname\csname up#1\endcsname
+    \else
+      \expandafter\let\csname #1\expandafter\endcsname\csname it#1\endcsname
+    \fi
+  }
+  \fdrss@greek@capital{Gamma}{"00}{"80}
+  \fdrss@greek@capital{Delta}{"01}{"81}
+  \fdrss@greek@capital{Theta}{"02}{"82}
+  \fdrss@greek@capital{Lambda}{"03}{"83}
+  \fdrss@greek@capital{Xi}{"04}{"84}
+  \fdrss@greek@capital{Pi}{"05}{"85}
+  \fdrss@greek@capital{Sigma}{"06}{"86}
+  \fdrss@greek@capital{Upsilon}{"07}{"87}
+  \fdrss@greek@capital{Phi}{"08}{"88}
+  \fdrss@greek@capital{Psi}{"09}{"89}
+  \fdrss@greek@capital{Omega}{"0A}{"8A}
+  \fdrss@greek@letter{alpha}{"0B}{"8B}
+  \fdrss@greek@letter{beta}{"0C}{"8C}
+  \fdrss@greek@letter{gamma}{"0D}{"8D}
+  \fdrss@greek@letter{delta}{"0E}{"8E}
+  \fdrss@greek@letter{epsilon}{"0F}{"8F}
+  \fdrss@greek@letter{zeta}{"10}{"90}
+  \fdrss@greek@letter{eta}{"11}{"91}
+  \fdrss@greek@letter{theta}{"12}{"92}
+  \fdrss@greek@letter{iota}{"13}{"93}
+  \fdrss@greek@letter{kappa}{"14}{"94}
+  \fdrss@greek@letter{lambda}{"15}{"95}
+  \fdrss@greek@letter{mu}{"16}{"96}
+  \fdrss@greek@letter{nu}{"17}{"97}
+  \fdrss@greek@letter{xi}{"18}{"98}
+  \fdrss@greek@letter{pi}{"19}{"99}
+  \fdrss@greek@letter{rho}{"1A}{"9A}
+  \fdrss@greek@letter{sigma}{"1B}{"9B}
+  \fdrss@greek@letter{tau}{"1C}{"9C}
+  \fdrss@greek@letter{upsilon}{"1D}{"9D}
+  \fdrss@greek@letter{phi}{"1E}{"9E}
+  \fdrss@greek@letter{chi}{"1F}{"9F}
+  \fdrss@greek@letter{psi}{"20}{"A0}
+  \fdrss@greek@letter{omega}{"21}{"A1}
+  \fdrss@greek@letter{varepsilon}{"22}{"A2}
+  \fdrss@greek@letter{vartheta}{"23}{"A3}
+  \fdrss@greek@letter{varpi}{"19}{"99}
+  \fdrss@greek@letter{varrho}{"1A}{"9A}
+  \fdrss@greek@letter{varsigma}{"26}{"A6}
+  \fdrss@greek@letter{varphi}{"27}{"A7}
+%    \end{macrocode}
+% Some of the following symbols are not really Greek letters, but they are
+% treated in the same way.
+%    \begin{macrocode}
+  \fdrss@greek@letter{varbeta}{"A8}{"B0}
+  \fdrss@greek@letter{digamma}{"A9}{"B1}
+  \fdrss@greek@letter{backepsilon}{"AA}{"B2}
+  \fdrss@greek@letter{varbackepsilon}{"AB}{"B3}
+  \fdrss@greek@letter{eth}{"AC}{"B4}
+\fi
+%    \end{macrocode}
+%
+% \subsection{Bullet figures}
+%
+% We provide two commands to access Fedra's bullet figures.
+%    \begin{macrocode}
+\iffdrss@text
+  \newcommand*{\fdrss@@openbullet}[2]{%
+    \ifx#2\end
+      \char3#1%
+      \let\next\@gobble
+    \else
+      \char2#1\kern-0.02em%
+      \let\next\fdrss@@openbullet
+    \fi
+    \next#2%
+  }
+  \newcommand*{\fdrss@openbullet}[2]{%
+    \ifx#2\end
+      \char0#1%
+      \let\next\@gobble
+    \else%
+      \char1#1\kern-0.02em%
+      \let\next\fdrss@@openbullet
+    \fi
+    \next#2%
+  }
+  \DeclareRobustCommand*{\openbullet}[1]{%
+    \begingroup
+    \usefont{U}{\fdrss@family-Pi}{m}{n}%
+    \edef\@tempa{#1}\expandafter\fdrss@openbullet\@tempa\end
+    \endgroup
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+  \newcommand*{\fdrss@@closedbullet}[2]{%
+    \ifx#2\end
+      \char7#1%
+      \let\next\@gobble
+    \else
+      \char6#1\kern-0.02em%
+      \let\next\fdrss@@closedbullet
+    \fi
+    \next#2%
+  }
+  \newcommand*{\fdrss@closedbullet}[2]{%
+    \ifx#2\end
+      \char4#1%
+      \let\next\@gobble
+    \else
+      \char5#1\kern-0.02em%
+      \let\next\fdrss@@closedbullet
+    \fi
+    \next#2%
+  }
+  \DeclareRobustCommand*{\closedbullet}[1]{%
+    \begingroup
+    \usefont{U}{\fdrss@family-Pi}{m}{n}%
+    \edef\@tempa{#1}\expandafter\fdrss@closedbullet\@tempa\end
+    \endgroup
+  }
+\fi
+%    \end{macrocode}
+%
+% \subsection{Superior and inferior figures}
+%
+% The following command converts numbers to inferior figures.
+%    \begin{macrocode}
+\newcommand*{\fdrss@@inferior}[1]{%
+  \ifx#1\end
+    \let\next\relax
+  \else
+    \char"1#1%
+    \let\next\fdrss@@inferior
+  \fi
+  \next
+}
+\newcommand*{\fdrss@inferior}[1]{%
+  \begingroup
+  \edef\@tempa{#1}\expandafter\fdrss@@inferior\@tempa\end
+  \endgroup
+}
+%    \end{macrocode}
+% |\fdrss@ensuretext| switches to text mode, if necessary.
+%    \begin{macrocode}
+\newcommand*{\fdrss@ensuretext}[1]{%
+  \ifmmode
+    \fdsy@text{#1}%
+  \else
+    #1%
+  \fi
+}
+%    \end{macrocode}
+% We provide two commands for generating numerical fractions.
+%    \begin{macrocode}
+\newcommand*{\fdrss@smallfrac}[2]{%
+  \begingroup
+  \fontencoding{U}\fontfamily{\fdrss@family-Extra}\fontshape{n}\selectfont
+  \leavevmode
+  \setbox\@tempboxa\vbox{%
+    \baselineskip\z@skip%
+    \lineskip.25ex%
+    \lineskiplimit-\maxdimen
+    \ialign{\hfil##\hfil\crcr
+      \vbox to 1.25ex{\vss\hbox{#1}\vskip.25ex}\crcr
+      \leavevmode\leaders\hrule height 0.91ex depth -0.87ex\hfill\crcr
+      \vtop to 1ex{\vbox{}\hbox{\fdrss@inferior{#2}}\vss}\crcr
+      \noalign{\vskip-1.2ex}}}%
+  \box\@tempboxa
+  \endgroup
+ }
+\DeclareRobustCommand*{\smallfrac}[2]{%
+  \fdrss@ensuretext{\kern0.08em\fdrss@smallfrac{#1}{#2}\kern0.1em}%
+}
+\newcommand*{\fdrss@slantfrac}[2]{%
+  \begingroup
+  \fontencoding{U}\fontfamily{\fdrss@family-Extra}\fontshape{n}\selectfont
+  #1\kern-0.05em/\kern0em\fdrss@inferior{#2}%
+  \endgroup
+}
+\DeclareRobustCommand*{\slantfrac}[2]{%
+  \fdrss@ensuretext{\kern0.08em\fdrss@slantfrac{#1}{#2}\kern0.1em}%
+}
+%    \end{macrocode}
+%
+% \subsection{Logos}
+%
+%    \begin{macrocode}
+\iffdrss@sfdefault
+  \DeclareRobustCommand{\LaTeX}{L\kern-.26em%
+    {\sbox\z@ T%
+      \vbox to\ht\z@{\hbox{\check@mathfonts
+        \fontsize\sf@size\z@
+        \math@fontsfalse\selectfont
+        A}%
+      \vss}%
+    }%
+    \kern-.05em%
+    \TeX
+  }
+\fi
+%    \end{macrocode}
+%
+% Make the changes take effect. This concludes the main style file.
+%    \begin{macrocode}
+\iffdrss@text
+  \normalfont
+\fi
+%</package>
+%    \end{macrocode}
+%
+% \section{Microtype configuration file}
+%
+% The \pkg{microtype} configuration. All four families use the same
+% file (cf.\ section~\ref{sec:fontdef}).
+%    \begin{macrocode}
+%<*mtcfg>
+\SetProtrusion
+  [ name = FedraSansPro-n ]
+  {  }
+  {
+     . = { ,700},
+    {,}= { ,500},
+     : = { ,500},
+     ; = { ,300},
+     ! = { ,100},
+     ? = { ,100},
+     @ = {50,50},
+     ~ = {200,250},
+    \% = {50,50},
+     * = {200,200},
+     + = {250,250},
+     ( = {100,   },    ) = {   ,200},
+     / = {100,200},
+     - = {600,600},
+     \textendash       = {450,450},   \textemdash        = {260,260},
+     \textquoteleft    = {300,400},   \textquoteright    = {300,400},
+     \textquotedblleft = {300,300},   \textquotedblright = {300,300}
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-OT1,
+     load     = FedraSansPro-n    ]
+   { encoding = {OT1},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {n,sc,ssc} }
+   {  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-T1,
+     load     = FedraSansPro-n   ]
+   { encoding = {T1,LY1},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {n,sc,ssc} }
+   {
+     _ = {100,100},
+     \textbackslash    = {100,200},
+     \quotesinglbase   = {400,400},   \quotedblbase      = {400,400},
+     \guilsinglleft    = {400,300},   \guilsinglright    = {300,400},
+     \guillemotleft    = {200,200},   \guillemotright    = {200,200},
+     \textexclamdown   = {100,   },   \textquestiondown  = {100,   },
+     \textbraceleft    = {400,200},   \textbraceright    = {200,400},
+     \textless         = {200,100},   \textgreater       = {100,200}
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-QX,
+     load     = FedraSansPro-n   ]
+   { encoding = {QX},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {n,sc,ssc} }
+   {
+     _ = {100,100},
+     \textbackslash    = {100,200},   \textellipsis      = {100,200},
+     \textperiodcentered = {500,700}, \quotedblbase      = {400,400},
+     \textquotedbl     = {400,400},   \textquotesingle   = {400,400},
+     \guillemotleft    = {200,200},   \guillemotright    = {200,200},
+     \textexclamdown   = {100,   },   \textquestiondown  = {100,   },
+     \textbraceleft    = {400,200},   \textbraceright    = {200,400},
+     \textless         = {200,100},   \textgreater       = {100,200}
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-T5,
+     load     = FedraSansPro-n   ]
+   { encoding = {T5},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {n,sc,ssc} }
+   {
+     _ = {100,100},
+     \textbackslash    = {100,200},
+     \quotesinglbase   = {400,400},   \quotedblbase      = {400,400},
+     \guilsinglleft    = {400,300},   \guilsinglright    = {300,400},
+     \guillemotleft    = {200,200},   \guillemotright    = {200,200},
+     \textbraceleft    = {400,200},   \textbraceright    = {200,400},
+     \textless         = {200,100},   \textgreater       = {100,200}
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+  [ name     = FedraSansPro-it ]
+  {  }
+  {
+     . = { ,500},
+    {,}= { ,500},
+     : = { ,300},
+     ; = { ,300},
+     & = {50,50},
+    \% = {100, },
+     * = {200,200},
+     + = {150,200},
+     @ = {50,50},
+     ~ = {150,150},
+     ( = {200, },    ) = {  ,200},
+     / = {100,200},
+     - = {630,630},
+     \textendash       = {200,200},   \textemdash        = {150,150},
+     \textquoteleft    = {400,200},   \textquoteright    = {400,200},
+     \textquotedblleft = {400,200},   \textquotedblright = {400,200}
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+  [ name     = FedraSansPro-OT1-it,
+    load     = FedraSansPro-it      ]
+  { encoding = OT1,
+    family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+    shape    = {it,scit,sscit,sw,scsw,sscsw} }
+  {  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-T1-it,
+     load     = FedraSansPro-it     ]
+   { encoding = {T1,LY1},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {it,sl,sw,scit,scsl,scsw} }
+   {
+     _ = {  ,100},
+     \textbackslash    = {100,200},
+     \quotesinglbase   = {300,700},   \quotedblbase      = {400,500},
+     \guilsinglleft    = {400,400},   \guilsinglright    = {300,500},
+     \guillemotleft    = {300,300},   \guillemotright    = {300,300},
+     \textexclamdown   = {100,   },   \textquestiondown  = {200,   },
+     \textbraceleft    = {200,100},   \textbraceright    = {200,200},
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-QX-it,
+     load     = FedraSansPro-it     ]
+   { encoding = {QX},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {it,sl,sw,scit,scsl,scsw} }
+   {
+     _ = {  ,100},
+     \textbackslash    = {100,200},   \textellipsis      = {100,200},
+     \textperiodcentered = {500,700}, \quotedblbase      = {400,500},
+     \textquotedbl     = {400,400},   \textquotesingle   = {400,400},
+     \guillemotleft    = {300,300},   \guillemotright    = {300,300},
+     \textexclamdown   = {100,   },   \textquestiondown  = {200,   },
+     \textbraceleft    = {200,100},   \textbraceright    = {200,200},
+   }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\SetProtrusion
+   [ name     = FedraSansPro-T5-it,
+     load     = FedraSansPro-it     ]
+   { encoding = {T5},
+     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
+     shape    = {it,sl,sw,scit,scsl,scsw} }
+   {
+     _ = {  ,100},
+     \textbackslash    = {100,200},
+     \quotesinglbase   = {300,700},   \quotedblbase      = {400,500},
+     \guilsinglleft    = {400,400},   \guilsinglright    = {300,500},
+     \guillemotleft    = {300,300},   \guillemotright    = {300,300},
+     \textbraceleft    = {200,100},   \textbraceright    = {200,200},
+   }
+%</mtcfg>
+%    \end{macrocode}
+%
+% \section{Font definition support package}\label{sec:fontdef}
+%
+% As all font definitions look the same, we introduce macros to ease the
+% configuration. These macros are stored in the file
+% \file{fedrasans-fd.sty}, which is included by every \acro{FD} file.
+% Since \file{fedrasans-fd.sty} will be included several times and
+% we do not know in which context the code is executed, we have
+% to define all non-private commands as globals and avoid all |\preambleonly|
+% commands.
+%
+% We add a guard so that this file is executed only once even if it is included
+% multiple times.
+%    \begin{macrocode}
+%<*fontdef>
+\ifx\fdrss@variant\@undefined\else\endinput\fi
+%    \end{macrocode}
+% We distinguish between being loaded directly or via |\usepackage| in the
+% preamble by checking |\@nodocument|.
+%    \begin{macrocode}
+\ifx\@nodocument\relax\else
+  \NeedsTeXFormat{LaTeX2e}
+  \RequirePackage{xkeyval}
+\fi
+%    \end{macrocode}
+% Reset |\escapechar| (which is set to $-1$ in \acro{FD} files) to make
+% |\newcommand| work. The additional group does not harm; we have to
+% make the important commands global anyway.
+%    \begin{macrocode}
+\ifx\@nodocument\relax
+  \begingroup
+  \escapechar`\\
+\fi
+%    \end{macrocode}
+% The macro to make commands global is taken from the \pkg{otfontdef} package.
+%    \begin{macrocode}
+\newcommand*\fdrss@makeglobal[1]{%
+  \global\expandafter\let\csname #1\expandafter\endcsname
+  \csname #1\endcsname
+}
+%    \end{macrocode}
+% \subsection{Options}
+%
+% These are the default values if it is impossible to process options.
+%    \begin{macrocode}
+\newcommand\fdrss@variant{}
+\newcommand\fdrss@mweight@normal{Book}
+\newcommand\fdrss@mweight@small{Book}
+\newcommand\fdrss@bweight@normal{Medium}
+\newcommand\fdrss@bweight@small{Medium}
+\newcommand\fdrss@scale{1.0}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\ifx\@nodocument\relax\else
+  \newcommand*\fdrss@fd@boolkey[2]{%
+    \define@boolkey{fedrasans-fd.sty}[fdrss@fd@]{#1}[true]{#2}%
+  }
+  \newcommand*\fdrss@fd@choicekey[3]{%
+    \define@choicekey*{fedrasans-fd.sty}{#1}[\@tempa\@tempb]{#2}{#3}%
+  }
+  \fdrss@fd@boolkey{alt}{%
+    \iffdrss@fd@alt\renewcommand\fdrss@variant{Alt}\fi%
+  }
+  \fdrss@fd@choicekey{normalweight}{book,demi,auto}{%
+    \ifcase\@tempb\relax
+      \renewcommand\fdrss@mweight@normal{Book}
+      \renewcommand\fdrss@mweight@small{Book}
+    \or
+      \renewcommand\fdrss@mweight@normal{Demi}
+      \renewcommand\fdrss@mweight@small{Demi}
+    \or
+      \renewcommand\fdrss@mweight@normal{Book}
+      \renewcommand\fdrss@mweight@small{Demi}
+    \fi
+  }
+  \fdrss@fd@choicekey{boldweight}{medium,bold,auto}{%
+    \ifcase\@tempb\relax
+      \renewcommand\fdrss@bweight@normal{Medium}
+      \renewcommand\fdrss@bweight@small{Medium}
+    \or
+      \renewcommand\fdrss@bweight@normal{Bold}
+      \renewcommand\fdrss@bweight@small{Bold}
+    \or
+      \renewcommand\fdrss@bweight@normal{Medium}
+      \renewcommand\fdrss@bweight@small{Bold}
+    \fi
+  }
+  \define@key{fedrasans-fd.sty}{scale}[0.9]{\renewcommand*\fdrss@scale{#1}}
+  \ProcessOptionsX\relax
+\fi
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\fdrss@makeglobal{fdrss@variant}
+\fdrss@makeglobal{fdrss@mweight@normal}
+\fdrss@makeglobal{fdrss@mweight@small}
+\fdrss@makeglobal{fdrss@bweight@normal}
+\fdrss@makeglobal{fdrss@bweight@small}
+\fdrss@makeglobal{fdrss@scale}
+%    \end{macrocode}
+%
+% \subsection{Font configuration}
+%
+% We define commands to write to and read from the configuration database.
+%    \begin{macrocode}
+\newcommand*{\fdrss@addconfig}[4][]{%
+  \@for\@tempa:=#3\do{%
+    \expandafter
+    \gdef\csname fdrss@config@#2@#1@\@tempa\endcsname{#4}%
+  }%
+}
+\newcommand*{\fdrss@useconfig}[3]{%
+ \@ifundefined{fdrss@config@#2@#1@#3}{%
+   \@ifundefined{fdrss@config@#2@@#3}{}%
+     {\csname fdrss@config@#2@@#3\endcsname}%
+  }{\csname fdrss@config@#2@#1@#3\endcsname}%
+}
+\fdrss@makeglobal{fdrss@useconfig}
+%    \end{macrocode}
+% Now we can build up the configuration database.
+%    \begin{macrocode}
+\fdrss@addconfig{weight/normal}{l}{Light}
+\fdrss@addconfig{weight/small}{l}{Light}
+\fdrss@addconfig{weight/normal}{sl}{Book}
+\fdrss@addconfig{weight/small}{sl}{Book}
+\fdrss@addconfig{weight/normal}{m}{\fdrss@mweight@normal}
+\fdrss@addconfig{weight/small}{m}{\fdrss@mweight@small}
+\fdrss@addconfig{weight/normal}{md}{Demi}
+\fdrss@addconfig{weight/small}{md}{Demi}
+\fdrss@addconfig{weight/normal}{sb}{Medium}
+\fdrss@addconfig{weight/small}{sb}{Medium}
+\fdrss@addconfig{weight/normal}{b}{\fdrss@bweight@normal}
+\fdrss@addconfig{weight/small}{b}{\fdrss@bweight@small}
+\fdrss@addconfig{weight/small}{ub}{Bold}
+\fdrss@addconfig{weight/normal}{ub}{Bold}
+\fdrss@addconfig{subs/series}{bx}{b}
+\fdrss@addconfig{italic}{it,scit,sscit}{Italic}
+\fdrss@addconfig[OML]{italic}{n}{French}
+\fdrss@addconfig[OML]{italic}{it}{Mixed}
+\fdrss@addconfig{shape}{sc,scit}{-sc}
+\fdrss@addconfig{shape}{ssc,sscit}{-ssc}
+\fdrss@addconfig{subs/shape}{sl}{it}
+\fdrss@addconfig{subs/shape}{scsl}{scit}
+\fdrss@addconfig{subs/shape}{sscsl}{sscit}
+%    \end{macrocode}
+% This is the main macro to declare a single font shape.
+%    \begin{macrocode}
+\newcommand*\DeclareFedraSansShape[4]{%
+  \edef\@@tempa{\fdrss@useconfig{#1}{subs/series}{#3}}%
+  \edef\@@tempb{\fdrss@useconfig{#1}{subs/shape}{#4}}%
+  \ifx\@@tempa\empty\ifx\@@tempb\empty
+    \DeclareFontShape{#1}{FedraSansPro-#2}{#3}{#4}{%
+      <-7.1>s*[\fdrss@scale]%
+        FedraSansAltPro-%
+        \fdrss@useconfig{#1}{weight/small}{#3}%
+        \fdrss@useconfig{#1}{italic}{#4}-#2%
+        \fdrss@useconfig{#1}{shape}{#4}-#1%
+      <7.1->s*[\fdrss@scale]%
+        FedraSansAltPro-%
+        \fdrss@useconfig{#1}{weight/normal}{#3}%
+        \fdrss@useconfig{#1}{italic}{#4}-#2%
+        \fdrss@useconfig{#1}{shape}{#4}-#1%
+    }{}%
+  \else
+    \DeclareFontShape{#1}{FedraSansPro-#2}{#3}{#4}{%
+      <->ssub* FedraSansPro-#2/#3/\@@tempb
+    }{}%
+  \fi\else
+    \DeclareFontShape{#1}{FedraSansPro-#2}{#3}{#4}{%
+      <->ssub* FedraSansPro-#2/\@@tempa/#4%
+    }{}%
+  \fi
+}
+\fdrss@makeglobal{DeclareFedraSansShape}
+%    \end{macrocode}
+% Finally, we provide commands to declare a complete family.
+%    \begin{macrocode}
+\newcommand*\DeclareFedraSansFamily[4]{%
+  \DeclareFontFamily{#1}{FedraSansPro-#2}{}%
+  \@for\fdrss@series:=#3\do{%
+    \@for\fdrss@shape:=#4\do{%
+      \DeclareFedraSansShape{#1}{#2}{\fdrss@series}{\fdrss@shape}%
+    }%
+  }%
+}
+\fdrss@makeglobal{DeclareFedraSansFamily}
+\newcommand*\DeclareFedraSansLargeFamily[2]{%
+  \DeclareFedraSansFamily{#1}{#2}{l,sl,m,md,sb,b,bx,ub}%
+    {n,it,sc,ssc,scit,sscit,sl,scsl,sscsl}%
+}
+\fdrss@makeglobal{DeclareFedraSansLargeFamily}
+\newcommand*\DeclareFedraSansSmallFamily[2]{%
+  \DeclareFedraSansFamily{#1}{#2}{l,sl,m,md,sb,b,bx,ub}{n,it,sl}%
+}
+\fdrss@makeglobal{DeclareFedraSansSmallFamily}
+\newcommand*\DeclareFedraSansTinyFamily[2]{%
+  \DeclareFedraSansFamily{#1}{#2}{l,sl,m,md,sb,b,bx,ub}{n}%
+}
+\fdrss@makeglobal{DeclareFedraSansTinyFamily}
+\newcommand*\DeclareFedraSansMathFamily[1]{%
+  \def\@tempa{#1}%
+  \def\@tempb{TOsF}%
+  \DeclareFontFamily{OML}{FedraSansPro-#1}{\skewchar\font=127}%
+  \@for\fdrss@series:=m,md,sb,b,bx,ub\do{%
+    \@for\fdrss@shape:=n,it\do{%
+      \ifx\@tempa\@tempb
+        \DeclareFedraSansShape{OML}{TOsF}{\fdrss@series}{\fdrss@shape}%
+      \else
+        \DeclareFontShape{OML}{FedraSansPro-#1}{\fdrss@series}{\fdrss@shape}{%
+          <->ssub* FedraSansPro-TOsF/\fdrss@series/\fdrss@shape
+        }{}%
+      \fi
+    }%
+  }%
+}
+\fdrss@makeglobal{DeclareFedraSansMathFamily}
+%    \end{macrocode}
+%
+% We define font family aliases so that we can place all configurations for
+% the FedraSansPro family variants into one \pkg{microtype} file:
+% \file{mt-FedraSansPro.cfg}. We use \pkg{microtype}'s hook if \pkg{microtype}
+% has not been loaded yet (which should be the case); otherwise we can
+% execute the alias definitions directly.
+%    \begin{macrocode}
+\gdef\fdrss@MicroType@Aliases{%
+  \DeclareMicrotypeAlias{FedraSansPro-LF}{FedraSansPro}%
+  \DeclareMicrotypeAlias{FedraSansPro-OsF}{FedraSansPro}%
+  \DeclareMicrotypeAlias{FedraSansPro-TLF}{FedraSansPro}%
+  \DeclareMicrotypeAlias{FedraSansPro-TOsF}{FedraSansPro}%
+}
+\@ifundefined{Microtype@Hook}{%
+  \global\let\Microtype@Hook\fdrss@MicroType@Aliases
+}{%
+  \g@addto@macro\Microtype@Hook{\fdrss@Microtype@Aliases}%
+}%
+\@ifundefined{DeclareMicroTypeAlias}{}{\fdrss@MicroType@Aliases}%
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\ifx\@nodocument\relax
+  \endgroup
+\fi
+%</fontdef>
+%    \end{macrocode}
+%
+% \section{Font definition files}
+%
+% Using the above macros, the various \acro{FD} files become simple
+% two-liners.
+%    \begin{macrocode}
+%<*fd>
+\input{fedrasans-fd.sty}
+%<ot1&lf>\DeclareFedraSansLargeFamily{OT1}{LF}
+%<ot1&osf>\DeclareFedraSansLargeFamily{OT1}{OsF}
+%<ot1&tlf>\DeclareFedraSansLargeFamily{OT1}{TLF}
+%<ot1&tosf>\DeclareFedraSansLargeFamily{OT1}{TOsF}
+%<t1&lf>\DeclareFedraSansLargeFamily{T1}{LF}
+%<t1&osf>\DeclareFedraSansLargeFamily{T1}{OsF}
+%<t1&tlf>\DeclareFedraSansLargeFamily{T1}{TLF}
+%<t1&tosf>\DeclareFedraSansLargeFamily{T1}{TOsF}
+%<ts1&lf>\DeclareFedraSansLargeFamily{TS1}{LF}
+%<ts1&osf>\DeclareFedraSansLargeFamily{TS1}{OsF}
+%<ts1&tlf>\DeclareFedraSansLargeFamily{TS1}{TLF}
+%<ts1&tosf>\DeclareFedraSansLargeFamily{TS1}{TOsF}
+%<ly1&lf>\DeclareFedraSansLargeFamily{LY1}{LF}
+%<ly1&osf>\DeclareFedraSansLargeFamily{LY1}{OsF}
+%<ly1&tlf>\DeclareFedraSansLargeFamily{LY1}{TLF}
+%<ly1&tosf>\DeclareFedraSansLargeFamily{LY1}{TOsF}
+%<qx&lf>\DeclareFedraSansLargeFamily{QX}{LF}
+%<qx&osf>\DeclareFedraSansLargeFamily{QX}{OsF}
+%<qx&tlf>\DeclareFedraSansLargeFamily{QX}{TLF}
+%<qx&tosf>\DeclareFedraSansLargeFamily{QX}{TOsF}
+%<t5&lf>\DeclareFedraSansLargeFamily{T5}{LF}
+%<t5&osf>\DeclareFedraSansLargeFamily{T5}{OsF}
+%<t5&tlf>\DeclareFedraSansLargeFamily{T5}{TLF}
+%<t5&tosf>\DeclareFedraSansLargeFamily{T5}{TOsF}
+%<oml&lf>\DeclareFedraSansMathFamily{LF}
+%<oml&osf>\DeclareFedraSansMathFamily{OsF}
+%<oml&tlf>\DeclareFedraSansMathFamily{TLF}
+%<oml&tosf>\DeclareFedraSansMathFamily{TOsF}
+%<u&extra>\DeclareFedraSansSmallFamily{U}{Extra}
+%<u&orn>\DeclareFedraSansTinyFamily{U}{Pi}
+%</fd>
+%    \end{macrocode}
+%
+% \Finale
+\endinput
