@@ -155,6 +155,15 @@
 % which this package is based.
 %
 % \section{Interferences with other packages}
+% 
+% The \pkg{fedrasans} package is designed as a companion to the
+% \pkg{fedraserif} package, which provides \LaTeX\ support for the
+% serif version of Fedra. Since it is not possible to switch the
+% math fonts in the middle of a document, care has to be taken
+% wich of the two packages is loaded with math support. In particular, if
+% the \pkg{fedrasans} package is loaded with math support (i.e.\ using 
+% the |sfdefault| or |math| option), then the \pkg{fedraserif} package
+% must be loaded with the option |math=false|, or an error will occur.
 %
 % In order to use Fedra Sans as a math font, you need to have the
 % \pkg{fdsymbol} package (version~0.7 or higher) installed. Apart from
@@ -190,7 +199,7 @@
 % |math-style| & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
 % |math| & |true|, |false|* & \ref{sec:math} \\
 % |normalweight| & |Book|*, |Demi|, |auto| & \ref{sec:weights} \\
-% |sfdefault| & |true|, |false|* & \ref{sec:intro} \\
+% |sfdefault| & |true|, |false|* & \ref{sec:intro},\,\ref{sec:math} \\
 % |stdmathdigits| & |true|, |false|* & \ref{sec:mathdigits} \\
 % \bottomrule
 % \end{tabular}
@@ -201,10 +210,10 @@
 %
 % \subsection{Variants}\label{sec:variants}
 %
-% Fedra Sans Pro comes in two variants: the alternative variant (Fedra Sans
-% Alt Pro) shown here is a bit more conservative than the original variant,
-% which has a lowercase f that extends under the baseline and dots that look
-% like diamonds, to name a few of its features.
+% Fedra Sans Pro comes in two variants, which are licensed separately:
+% the alternative variant (Fedra Sans Alt Pro) shown here is a bit more
+% conservative than the original variant, which features a long f,
+% diamond-shaped dots, open counters, as well as a few other characteristics.
 % By default, the package use the original variant. If you prefer the
 % alternative variant, you can select it by passing the option |alt|.
 %
