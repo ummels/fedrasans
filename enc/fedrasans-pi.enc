@@ -28,25 +28,25 @@
 /two.closecirc_fina /three.closecirc_fina /four.closecirc_fina /five.closecirc_fina
 /six.closecirc_fina /seven.closecirc_fina /eight.closecirc_fina /nine.closecirc_fina
 % 0x50
-/anoteleia /uni25AA /uni25AB /uni25A0 /uni25A1 /uni25B8 /uni25C2 /uni25B9
-/uni25C3 /uni25B6 /uni25C0 /uni25B7 /uni25C1 /uni25BA /uni25C4 /uni25BB
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
 % 0x60
-/uni25C5 /uni25CF /uni25CB /uni2981 /uni25C9 /uni25CE /uni2665 /uni2661
-/uni24CA.pln /uni267E.pln /uni2708 /uni2708.alt /uni2139 /uni263A /uni2605 /uni235F
+/.notdef /.notdef /.notdef /.notdef /anoteleia /uni25AA /uni25AB /uni25A0
+/uni25A1 /uni25B8 /uni25C2 /uni25B9 /uni25C3 /uni25B6 /uni25C0 /uni25B7
 % 0x70
-/uni2192 /uni2190 /arrowup /arrowdown /uni2197 /uni2196 /uni2199 /uni2198
-/uni261B /uni261A /uni261E /uni261C /uni261D /uni261F /uni2610 /uni2611
+/uni25C1 /uni25BA /uni25C4 /uni25BB /uni25C5 /uni25CF /uni25CB /uni2981
+/uni25C9 /uni25CE /uni2665 /uni2661 /uni24CA.pln /uni267E.pln /uni2708 /uni2708.alt
 % 0x80
-/uni2713 /uni2612 /uni2709 /uni2641 /uni270E /uni231A /uni2740 /uni213B
-/uni260F /orn.01 /orn.02 /orn.03 /orn.04 /orn.05 /orn.06 /orn.07
+/uni2139 /uni263A /uni2605 /uni235F /uni2192 /uni2190 /arrowup /arrowdown
+/uni2197 /uni2196 /uni2199 /uni2198 /uni261B /uni261A /uni261E /uni261C
 % 0x90
-/orn.08 /orn.09 /orn.10 /orn.11 /orn.12 /orn.13 /orn.14 /orn.15
-/orn.16 /orn.17 /uni301C /orn.19 /orn.20 /.notdef /.notdef /.notdef
+/uni261D /uni261F /uni2713 /uni2610 /uni2611 /uni2612 /uni2709 /orn.09
+/uni260F /orn.05 /uni213B /orn.07 /orn.15 /uni2641 /uni270E /uni231A
 % 0xA0
-/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
-/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/orn.19 /orn.06 /orn.13 /orn.16 /uni2740 /orn.20 /orn.03 /orn.04
+/orn.14 /orn.02 /orn.10 /orn.12 /orn.11 /orn.08 /orn.17 /uni301C
 % 0xB0
-/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/orn.01 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
 % 0xC0
 /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
