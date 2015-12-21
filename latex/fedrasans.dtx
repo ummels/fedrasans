@@ -131,7 +131,7 @@
 %
 % \tableofcontents
 %
-% \section{Overview}
+% \section{Overview}\label{sec:intro}
 %
 % The \pkg{fedrasans} package provides \LaTeX\ support for the commercial
 % Fedra\textregistered\ Sans Pro fonts\footnote{Fedra is
@@ -190,7 +190,7 @@
 % |math-style| & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
 % |math| & |true|, |false|* & \ref{sec:math} \\
 % |normalweight| & |Book|*, |Demi|, |auto| & \ref{sec:weights} \\
-% |sfdefault| & |true|, |false|* & \\
+% |sfdefault| & |true|, |false|* & \ref{sec:intro} \\
 % |stdmathdigits| & |true|, |false|* & \ref{sec:mathdigits} \\
 % \bottomrule
 % \end{tabular}
@@ -360,21 +360,26 @@
 % \toprule
 %  number & glyph & number & glyph & number & glyph & number & glyph\\
 % \midrule
-% \showding{100} & \showding{115} & \showding{130} & \showding{145}\\
-% \showding{101} & \showding{116} & \showding{131} & \showding{146}\\
-% \showding{102} & \showding{117} & \showding{132} & \showding{147}\\
-% \showding{103} & \showding{118} & \showding{133} & \showding{148}\\
-% \showding{104} & \showding{119} & \showding{134} & \showding{149}\\
-% \showding{105} & \showding{120} & \showding{135} & \showding{150}\\
-% \showding{106} & \showding{121} & \showding{136} & \showding{151}\\
-% \showding{107} & \showding{122} & \showding{137} & \showding{152}\\
-% \showding{108} & \showding{123} & \showding{138} & \showding{153}\\
-% \showding{109} & \showding{124} & \showding{139} & \showding{154}\\
-% \showding{110} & \showding{125} & \showding{140} & \showding{155}\\
-% \showding{111} & \showding{126} & \showding{141} & \showding{156}\\
-% \showding{112} & \showding{127} & \showding{142} & \\
-% \showding{113} & \showding{128} & \showding{143} & \\
-% \showding{114} & \showding{129} & \showding{144} & \\
+% \showding{100} & \showding{120} & \showding{140} & \showding{160}\\
+% \showding{101} & \showding{121} & \showding{141} & \showding{161}\\
+% \showding{102} & \showding{122} & \showding{142} & \showding{162}\\
+% \showding{103} & \showding{123} & \showding{143} & \showding{163}\\
+% \showding{104} & \showding{124} & \showding{144} & \showding{164}\\
+% \showding{105} & \showding{125} & \showding{145} & \showding{165}\\
+% \showding{106} & \showding{126} & \showding{146} & \showding{166}\\
+% \showding{107} & \showding{127} & \showding{147} & \showding{167}\\
+% \showding{108} & \showding{128} & \showding{148} & \showding{168}\\
+% \showding{109} & \showding{129} & \showding{149} & \showding{169}\\
+% \showding{110} & \showding{130} & \showding{150} & \showding{170}\\
+% \showding{111} & \showding{131} & \showding{151} & \showding{171}\\
+% \showding{112} & \showding{132} & \showding{152} & \showding{172}\\
+% \showding{113} & \showding{133} & \showding{153} & \showding{173}\\
+% \showding{114} & \showding{134} & \showding{154} & \showding{174}\\
+% \showding{115} & \showding{135} & \showding{155} & \showding{175}\\
+% \showding{116} & \showding{136} & \showding{156} & \showding{176}\\
+% \showding{117} & \showding{137} & \showding{157} & \\
+% \showding{118} & \showding{138} & \showding{158} & \\
+% \showding{119} & \showding{139} & \showding{159} & \\
 % \bottomrule
 % \end{tabular}
 % \caption{\label{table:dingbats}Dingbats available with
@@ -514,7 +519,7 @@
 %   \acro{OML} &
 %   FedraSansPro-TOsF
 %   (FedraSansPro-LF, FedraSansPro-OsF, FedraSansPro-TLF) &
-%   l, sl, m, md,\> b (bx), sb, ub &
+%   sl, m, md,\> b (bx), sb, ub &
 %   n, it \\
 %   \addlinespace
 %   \midrule
@@ -1477,7 +1482,7 @@
   \def\@tempa{#1}%
   \def\@tempb{TOsF}%
   \DeclareFontFamily{OML}{FedraSansPro-#1}{\skewchar\font=127}%
-  \@for\fdrss@series:=m,md,sb,b,bx,ub\do{%
+  \@for\fdrss@series:=sl,m,md,sb,b,bx,ub\do{%
     \@for\fdrss@shape:=n,it\do{%
       \ifx\@tempa\@tempb
         \DeclareFedraSansShape{OML}{TOsF}{\fdrss@series}{\fdrss@shape}%
