@@ -99,7 +99,7 @@
 %</driver>
 %\fi
 %
-% \CheckSum{1102}
+% \CheckSum{1085}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -196,8 +196,8 @@
 % |fedrabb| & |true|, |false|* & \ref{sec:mathbb} \\
 % |footnotemarks| & |true|, |false|* & \ref{sec:footnotes} \\
 % |figures| & |lining|* (|lf|), |text| (|osf|) & \ref{sec:figures} \\
-% |math-style| & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
 % |math| & |true|, |false|* & \ref{sec:math} \\
+% |math-style| & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
 % |normalweight| & |Book|*, |Demi|, |auto| & \ref{sec:weights} \\
 % |sfdefault| & |true|, |false|* & \ref{sec:intro},\,\ref{sec:math} \\
 % |stdmathdigits| & |true|, |false|* & \ref{sec:mathdigits} \\
@@ -567,10 +567,6 @@
 \newcommand*\fdrss@choicekey[3]{%
   \define@choicekey*{fedrasans.sty}{#1}[\@tempa\@tempb]{#2}{#3}%
 }
-\newif\iffdrss@text
-\fdrss@texttrue
-\newif\iffdrss@math
-\fdrss@mathfalse
 %    \end{macrocode}
 %
 % \subsubsection*{Font selection}
@@ -606,9 +602,7 @@
 %    \end{macrocode}
 % The next option toggles the math font setup.
 %    \begin{macrocode}
-\fdrss@boolkey{math}{%
-  \iffdrss@math\fdrss@mathtrue\else\fdrss@mathfalse\fi%
-}
+\fdrss@boolkey{math}{}
 %    \end{macrocode}
 %
 % \subsubsection*{Figure style}
@@ -725,67 +719,65 @@
 %    \begin{macrocode}
 \RequirePackage[scale=0.9]{fedrasans-fd}
 \@ifpackageloaded{textcomp}{}{\RequirePackage{textcomp}}
-\iffdrss@text
-  \renewcommand\sfdefault{\fdrss@textfamily}
-  \DeclareEncodingSubset{TS1}{\fdrss@family-LF}{1}
-  \DeclareEncodingSubset{TS1}{\fdrss@family-TLF}{1}
-  \DeclareEncodingSubset{TS1}{\fdrss@family-OsF}{1}
-  \DeclareEncodingSubset{TS1}{\fdrss@family-TOsF}{1}
+\renewcommand\sfdefault{\fdrss@textfamily}
+\DeclareEncodingSubset{TS1}{\fdrss@family-LF}{1}
+\DeclareEncodingSubset{TS1}{\fdrss@family-TLF}{1}
+\DeclareEncodingSubset{TS1}{\fdrss@family-OsF}{1}
+\DeclareEncodingSubset{TS1}{\fdrss@family-TOsF}{1}
 %    \end{macrocode}
 % In order to accomodate ligatures and glyph variants, we had to remove
 % some glyphs from the standard encodings, but most of them can still be
 % accessed through the \acro{TS1} encoding.
 %    \begin{macrocode}
-  \AtBeginDocument{
-    \UndeclareTextCommand{\textcompwordmark}{T1}
-    \UndeclareTextCommand{\textvisiblespace}{T1}
-    \UndeclareTextCommand{\textperthousand}{T1}
-    \UndeclareTextCommand{\textpertenthousand}{T1}
-    \UndeclareTextCommand{\textsterling}{T1}
-    \UndeclareTextCommand{\textsection}{T1}
-    \UndeclareTextCommand{\textmu}{QX}
-    \UndeclareTextCommand{\texteuro}{QX}
-    \UndeclareTextCommand{\textEuro}{QX}
-    \let\textEuro\texteuro
-    \UndeclareTextCommand{\textdagger}{QX}
-    \UndeclareTextCommand{\textdaggerdbl}{QX}
-    \UndeclareTextCommand{\textdegree}{QX}
-    \UndeclareTextCommand{\textsection}{QX}
-    \UndeclareTextCommand{\textregistered}{QX}
-    \UndeclareTextCommand{\copyright}{QX}
-    \let\copyright\textcopyright
-    \UndeclareTextCommand{\textdiv}{QX}
-    \UndeclareTextCommand{\textminus}{QX}
-    \UndeclareTextCommand{\texttimes}{QX}
-    \UndeclareTextCommand{\textpm}{QX}
-    \UndeclareTextCommand{\textbullet}{QX}
-    \UndeclareTextCommand{\textcurrency}{QX}
-    \UndeclareTextCommand{\textperthousand}{QX}
-    \UndeclareTextCommand{\textanglearc}{QX}
-    \UndeclareTextCommand{\textvisiblespace}{T5}
+\AtBeginDocument{
+  \UndeclareTextCommand{\textcompwordmark}{T1}
+  \UndeclareTextCommand{\textvisiblespace}{T1}
+  \UndeclareTextCommand{\textperthousand}{T1}
+  \UndeclareTextCommand{\textpertenthousand}{T1}
+  \UndeclareTextCommand{\textsterling}{T1}
+  \UndeclareTextCommand{\textsection}{T1}
+  \UndeclareTextCommand{\textmu}{QX}
+  \UndeclareTextCommand{\texteuro}{QX}
+  \UndeclareTextCommand{\textEuro}{QX}
+  \let\textEuro\texteuro
+  \UndeclareTextCommand{\textdagger}{QX}
+  \UndeclareTextCommand{\textdaggerdbl}{QX}
+  \UndeclareTextCommand{\textdegree}{QX}
+  \UndeclareTextCommand{\textsection}{QX}
+  \UndeclareTextCommand{\textregistered}{QX}
+  \UndeclareTextCommand{\copyright}{QX}
+  \let\copyright\textcopyright
+  \UndeclareTextCommand{\textdiv}{QX}
+  \UndeclareTextCommand{\textminus}{QX}
+  \UndeclareTextCommand{\texttimes}{QX}
+  \UndeclareTextCommand{\textpm}{QX}
+  \UndeclareTextCommand{\textbullet}{QX}
+  \UndeclareTextCommand{\textcurrency}{QX}
+  \UndeclareTextCommand{\textperthousand}{QX}
+  \UndeclareTextCommand{\textanglearc}{QX}
+  \UndeclareTextCommand{\textvisiblespace}{T5}
 %    \end{macrocode}
 % Additional currency symbols are stored in empty slots of the TS1 encoding.
 %    \begin{macrocode}
-    \DeclareTextSymbol{\textcruzeiro}{TS1}{192}
-    \DeclareTextSymbol{\textfranc}{TS1}{193}
-    \DeclareTextSymbol{\textmill}{TS1}{194}
-    \DeclareTextSymbol{\textpeseta}{TS1}{195}
-    \DeclareTextSymbol{\textrupee}{TS1}{196}
-    \DeclareTextSymbol{\textsheqel}{TS1}{197}
-    \DeclareTextSymbol{\textkip}{TS1}{198}
-    \DeclareTextSymbol{\texttugrik}{TS1}{199}
-    \DeclareTextSymbol{\texthryvnia}{TS1}{200}
-    \DeclareTextSymbolDefault{\textcruzeiro}{TS1}
-    \DeclareTextSymbolDefault{\textfranc}{TS1}
-    \DeclareTextSymbolDefault{\textmill}{TS1}
-    \DeclareTextSymbolDefault{\textpeseta}{TS1}
-    \DeclareTextSymbolDefault{\textrupee}{TS1}
-    \DeclareTextSymbolDefault{\textsheqel}{TS1}
-    \DeclareTextSymbolDefault{\textkip}{TS1}
-    \DeclareTextSymbolDefault{\texttugrik}{TS1}
-    \DeclareTextSymbolDefault{\texthryvnia}{TS1}
-  }
-\fi
+  \DeclareTextSymbol{\textcruzeiro}{TS1}{192}
+  \DeclareTextSymbol{\textfranc}{TS1}{193}
+  \DeclareTextSymbol{\textmill}{TS1}{194}
+  \DeclareTextSymbol{\textpeseta}{TS1}{195}
+  \DeclareTextSymbol{\textrupee}{TS1}{196}
+  \DeclareTextSymbol{\textsheqel}{TS1}{197}
+  \DeclareTextSymbol{\textkip}{TS1}{198}
+  \DeclareTextSymbol{\texttugrik}{TS1}{199}
+  \DeclareTextSymbol{\texthryvnia}{TS1}{200}
+  \DeclareTextSymbolDefault{\textcruzeiro}{TS1}
+  \DeclareTextSymbolDefault{\textfranc}{TS1}
+  \DeclareTextSymbolDefault{\textmill}{TS1}
+  \DeclareTextSymbolDefault{\textpeseta}{TS1}
+  \DeclareTextSymbolDefault{\textrupee}{TS1}
+  \DeclareTextSymbolDefault{\textsheqel}{TS1}
+  \DeclareTextSymbolDefault{\textkip}{TS1}
+  \DeclareTextSymbolDefault{\texttugrik}{TS1}
+  \DeclareTextSymbolDefault{\texthryvnia}{TS1}
+}
 %    \end{macrocode}
 %
 % The font selection commands such as |\figureversion| and
@@ -959,63 +951,61 @@
 %
 % We provide two commands to access Fedra's bullet figures.
 %    \begin{macrocode}
-\iffdrss@text
-  \newcommand*{\fdrss@@openbullet}[2]{%
-    \ifx#2\end
-      \char3#1%
-      \let\next\@gobble
-    \else
-      \char2#1\kern-0.02em%
-      \let\next\fdrss@@openbullet
-    \fi
-    \next#2%
-  }
-  \newcommand*{\fdrss@openbullet}[2]{%
-    \ifx#2\end
-      \char0#1%
-      \let\next\@gobble
-    \else%
-      \char1#1\kern-0.02em%
-      \let\next\fdrss@@openbullet
-    \fi
-    \next#2%
-  }
-  \DeclareRobustCommand*{\openbullet}[1]{%
-    \begingroup
-    \usefont{U}{\fdrss@family-Pi}{m}{n}%
-    \edef\@tempa{#1}\expandafter\fdrss@openbullet\@tempa\end
-    \endgroup
-  }
+\newcommand*{\fdrss@@openbullet}[2]{%
+  \ifx#2\end
+    \char3#1%
+    \let\next\@gobble
+  \else
+    \char2#1\kern-0.02em%
+    \let\next\fdrss@@openbullet
+  \fi
+  \next#2%
+}
+\newcommand*{\fdrss@openbullet}[2]{%
+  \ifx#2\end
+    \char0#1%
+    \let\next\@gobble
+  \else%
+    \char1#1\kern-0.02em%
+    \let\next\fdrss@@openbullet
+  \fi
+  \next#2%
+}
+\DeclareRobustCommand*{\openbullet}[1]{%
+  \begingroup
+  \usefont{U}{\fdrss@family-Pi}{m}{n}%
+  \edef\@tempa{#1}\expandafter\fdrss@openbullet\@tempa\end
+  \endgroup
+}
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-  \newcommand*{\fdrss@@closedbullet}[2]{%
-    \ifx#2\end
-      \char7#1%
-      \let\next\@gobble
-    \else
-      \char6#1\kern-0.02em%
-      \let\next\fdrss@@closedbullet
-    \fi
-    \next#2%
-  }
-  \newcommand*{\fdrss@closedbullet}[2]{%
-    \ifx#2\end
-      \char4#1%
-      \let\next\@gobble
-    \else
-      \char5#1\kern-0.02em%
-      \let\next\fdrss@@closedbullet
-    \fi
-    \next#2%
-  }
-  \DeclareRobustCommand*{\closedbullet}[1]{%
-    \begingroup
-    \usefont{U}{\fdrss@family-Pi}{m}{n}%
-    \edef\@tempa{#1}\expandafter\fdrss@closedbullet\@tempa\end
-    \endgroup
-  }
-\fi
+\newcommand*{\fdrss@@closedbullet}[2]{%
+  \ifx#2\end
+    \char7#1%
+    \let\next\@gobble
+  \else
+    \char6#1\kern-0.02em%
+    \let\next\fdrss@@closedbullet
+  \fi
+  \next#2%
+}
+\newcommand*{\fdrss@closedbullet}[2]{%
+  \ifx#2\end
+    \char4#1%
+    \let\next\@gobble
+  \else
+    \char5#1\kern-0.02em%
+    \let\next\fdrss@@closedbullet
+  \fi
+  \next#2%
+}
+\DeclareRobustCommand*{\closedbullet}[1]{%
+  \begingroup
+  \usefont{U}{\fdrss@family-Pi}{m}{n}%
+  \edef\@tempa{#1}\expandafter\fdrss@closedbullet\@tempa\end
+  \endgroup
+}
 %    \end{macrocode}
 %
 % \subsection{Superior and inferior figures}
@@ -1099,9 +1089,7 @@
 %
 % Make the changes take effect. This concludes the main style file.
 %    \begin{macrocode}
-\iffdrss@text
-  \normalfont
-\fi
+\normalfont
 %</package>
 %    \end{macrocode}
 %
