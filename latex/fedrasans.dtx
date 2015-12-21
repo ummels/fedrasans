@@ -1221,7 +1221,7 @@
     load     = FedraSansPro-it      ]
   { encoding = OT1,
     family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
-    shape    = {it,scit,sscit,sw,scsw,sscsw} }
+    shape    = {it,scit,sscit} }
   {  }
 %    \end{macrocode}
 %
@@ -1231,7 +1231,7 @@
      load     = FedraSansPro-it     ]
    { encoding = {T1,LY1},
      family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
-     shape    = {it,sl,sw,scit,scsl,scsw} }
+     shape    = {it,sl,scit,scsl} }
    {
      _ = {  ,100},
      \textbackslash    = {100,200},
@@ -1249,7 +1249,7 @@
      load     = FedraSansPro-it     ]
    { encoding = {QX},
      family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
-     shape    = {it,sl,sw,scit,scsl,scsw} }
+     shape    = {it,sl,scit,scsl} }
    {
      _ = {  ,100},
      \textbackslash    = {100,200},   \textellipsis      = {100,200},
@@ -1267,7 +1267,7 @@
      load     = FedraSansPro-it     ]
    { encoding = {T5},
      family   = {FedraSansPro-OsF,FedraSansPro-LF,FedraSansPro-TOsF,FedraSansPro-TLF},
-     shape    = {it,sl,sw,scit,scsl,scsw} }
+     shape    = {it,sl,scit,scsl} }
    {
      _ = {  ,100},
      \textbackslash    = {100,200},
@@ -1503,18 +1503,18 @@
 % has not been loaded yet (which should be the case); otherwise we can
 % execute the alias definitions directly.
 %    \begin{macrocode}
-\gdef\fdrss@MicroType@Aliases{%
+\gdef\fdrss@Microtype@Aliases{%
   \DeclareMicrotypeAlias{FedraSansPro-LF}{FedraSansPro}%
   \DeclareMicrotypeAlias{FedraSansPro-OsF}{FedraSansPro}%
   \DeclareMicrotypeAlias{FedraSansPro-TLF}{FedraSansPro}%
   \DeclareMicrotypeAlias{FedraSansPro-TOsF}{FedraSansPro}%
 }
 \@ifundefined{Microtype@Hook}{%
-  \global\let\Microtype@Hook\fdrss@MicroType@Aliases
+  \global\let\Microtype@Hook\fdrss@Microtype@Aliases
 }{%
   \g@addto@macro\Microtype@Hook{\fdrss@Microtype@Aliases}%
 }%
-\@ifundefined{DeclareMicroTypeAlias}{}{\fdrss@MicroType@Aliases}%
+\@ifundefined{DeclareMicroTypeAlias}{}{\fdrss@Microtype@Aliases}%
 %    \end{macrocode}
 %
 %    \begin{macrocode}
