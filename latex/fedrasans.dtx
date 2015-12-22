@@ -99,7 +99,7 @@
 %</driver>
 %\fi
 %
-% \CheckSum{1085}
+% \CheckSum{1084}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -427,8 +427,8 @@
 % By default, we only change the math font to Fedra Sans Pro (with mathematical
 % symbols taken from FdSymbol) if the option |sfdefault| has been selected.
 % In order to allow for a more fine-grained control, you can enable or disable
-% using the |math| option. Note that all other options described in this section
-% only have an effect if math support is enabled.
+% math support using the |math| option. Note that all other options described in
+% this section only have an effect if math support is enabled.
 %
 % \subsection{Letters}\label{sec:mathletters}
 %
@@ -502,8 +502,9 @@
 % If you also have the \pkg{fedraserif} package installed, you can
 % use the option |fedrabb| to change the math blackboard alphabet
 % to Fedra Serif. See the documentation of the \pkg{fedraserif} package
-% for more information. Note that this option only works if the
-% \pkg{fedraserif} is loaded \emph{before} the \pkg{fedrasans} package.
+% for more information. Note that for this option to work correctly, the
+% \pkg{fedraserif} package should be loaded \emph{before} the
+% \pkg{fedrasans} package.
 %
 % \section{\acro{NFSS} classification}
 %
@@ -665,7 +666,7 @@
 \fdrss@boolkey{fedrabb}{%
   \iffdrss@fedrabb
     \renewcommand\fdrss@load@bb{%
-      \DeclareMathAlphabet\mathbb{U}{\fdrsf@family-BB}{m}{n}%
+      \DeclareMathAlphabet\mathbb{U}{FedraSerifPro-BB}{m}{n}%
       \renewcommand\Bbbk{\mathbb{k}}%
     }%
   \fi
