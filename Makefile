@@ -52,6 +52,9 @@ flags_scsw := $(flags_sc) $(flags_sw)
 flags_sscsw := $(flags_ssc) $(flags_sw) 
 flags_math := --letterspacing=40 --math-spacing
 
+# $(call fullfamily,variant)
+fullfamily = $(if $(findstring $1,Alt),FedraSansAltPro,FedraSansPro)
+
 otffiles_in := $(wildcard $(fontname)*.otf)
 otffiles_up := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(fontname)$(var)Pro-%.otf)))
 otffiles_it := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(fontname)$(var)Pro-%Italic.otf)))
@@ -69,9 +72,10 @@ mapfile := $(dvipsdir)/$(pkg).map
 plfiles := $(foreach w,Book Regular Medium Bold,\
   $(foreach s,A B C E,$(auxdir)/FdSymbol$s-$w.pl))
 styfiles := $(addprefix latex/,$(pkg).sty $(pkg)-fd.sty mt-$(family).cfg)
-fdfiles := $(foreach enc,$(encodings) OML,\
-  $(foreach ver,$(figures),latex/$(enc)$(family)-$(ver).fd)) \
-  latex/U$(family)-Extra.fd latex/U$(family)-Pi.fd
+fdfiles := $(foreach enc,$(encodings) OML,$(foreach var,$(variants),\
+  $(foreach ver,$(figures),latex/$(enc)$(call fullfamily,$(var))-$(ver).fd))) \
+  $(foreach var,$(variants),latex/U$(call fullfamily,$(var))-Extra.fd \
+  latex/U$(call fullfamily,$(var))-Pi.fd)
 tempfiles := $(addprefix latex/,$(pkg).aux $(pkg).log $(pkg).out $(pkg).toc $(pkg).hd)
 
 # create output directories
