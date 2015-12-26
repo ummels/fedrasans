@@ -128,6 +128,23 @@
 \DocInput{fedrasans.dtx}
 \end{document}
 %</driver>
+%<*test>
+\documentclass[fleqn]{article}
+
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+%<!alt>\usepackage[sfdefault]{fedrasans}
+%<alt>\usepackage[alt,sfdefault]{fedrasans}
+
+\raggedbottom
+\setlength{\parindent}{0pt}
+\linespread{1.5}
+
+\begin{document}
+\sffamily
+Test \emph{Test} $\varbeta$ $\upvarbeta$
+\end{document}
+%</test>
 %\fi
 %
 % \CheckSum{1140}

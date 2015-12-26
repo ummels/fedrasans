@@ -63,8 +63,21 @@ flags_scsw := $(flags_sc) $(flags_sw)
 flags_sscsw := $(flags_ssc) $(flags_sw) 
 flags_math := --letterspacing=40 --math-spacing
 
+# auxiliary functions
+
 # $(call fullfamily,variant)
-fullfamily = $(if $(findstring $1,Alt),FedraSansAltPro,FedraSansPro)
+fullfamily = $(if $(findstring $(call lc,$1),alt),FedraSansAltPro,FedraSansPro)
+
+# $(call shapestr,shape)
+shapestr = $(if $(findstring $1,n),,-$1)
+
+# $(call encname,encoding,version)
+encname = $(if $(findstring $1,U),$(call lc,$2),$(call lc,$1))
+
+# $(call lc,text)
+lc = $(subst A,a,$(subst B,b,$(subst C,c,$(subst D,d,$(subst E,e,$(subst F,f,$(subst G,g,$(subst H,h,$(subst I,i,$(subst J,j,$(subst K,k,$(subst L,l,$(subst M,m,$(subst N,n,$(subst O,o,$(subst P,p,$(subst Q,q,$(subst R,r,$(subst S,s,$(subst T,t,$(subst U,u,$(subst V,v,$(subst W,w,$(subst X,x,$(subst Y,y,$(subst Z,z,$1))))))))))))))))))))))))))
+
+# more variables
 
 otffiles_in := $(wildcard $(fontname)*.otf)
 otffiles_up := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(fontname)$(var)Pro-%.otf)))
@@ -87,6 +100,7 @@ fdfiles := $(foreach enc,$(encodings) OML,$(foreach var,$(variants),\
   $(foreach ver,$(figures),$(latexdir)/$(enc)$(call fullfamily,$(var))-$(ver).fd))) \
   $(foreach var,$(variants),$(latexdir)/U$(call fullfamily,$(var))-Extra.fd \
   $(latexdir)/U$(call fullfamily,$(var))-Pi.fd)
+testfiles := $(latexdir)/test-$(pkg).tex $(latexdir)/test-$(pkg)-alt.tex
 tempfiles := $(addprefix $(latexdir)/,$(pkg).aux $(pkg).log $(pkg).out $(pkg).toc $(pkg).hd)
 
 # create output directories
@@ -94,17 +108,6 @@ tempfiles := $(addprefix $(latexdir)/,$(pkg).aux $(pkg).log $(pkg).out $(pkg).to
 ifeq (,$(findstring clean,$(MAKECMDGOALS)))
 create-dirs := $(shell $(MKDIR) $(outdirs))
 endif
-
-# auxiliary functions
-
-# $(call shapestr,shape)
-shapestr = $(if $(findstring $1,n),,-$1)
-
-# $(call encname,encoding,version)
-encname = $(if $(findstring $1,U),$(call lc,$2),$(call lc,$1))
-
-# $(call lc,text)
-lc = $(subst A,a,$(subst B,b,$(subst C,c,$(subst D,d,$(subst E,e,$(subst F,f,$(subst G,g,$(subst H,h,$(subst I,i,$(subst J,j,$(subst K,k,$(subst L,l,$(subst M,m,$(subst N,n,$(subst O,o,$(subst P,p,$(subst Q,q,$(subst R,r,$(subst S,s,$(subst T,t,$(subst U,u,$(subst V,v,$(subst W,w,$(subst X,x,$(subst Y,y,$(subst Z,z,$1))))))))))))))))))))))))))
 
 # macro for building a font table
 
@@ -282,8 +285,39 @@ $(plfiles): $(auxdir)/%.pl:
 .PHONY: latex
 latex: $(styfiles) $(fdfiles)
 
-$(styfiles) $(fdfiles): $(latexdir)/$(pkg).ins $(latexdir)/$(pkg).dtx
-	cd $(latexdir) && $(PDFLATEX) $(pkg).ins
+$(styfiles) $(fdfiles) $(testfiles): $(latexdir)/$(pkg).ins $(latexdir)/$(pkg).dtx
+	$(LATEX) -output-directory $(latexdir) $<
+
+# rules for testing the build
+
+.PHONY: test
+test: all $(testfiles)
+ifneq ($(filter $(call fullfamily,)-%,$(fonts_up)),)
+	@echo "Testing Fedra Sans Pro with pdflatex..."
+	$(pdflatex) -output-directory $(testdir) "\pdfmapfile{$(mapfile)}\input{test-$(pkg)}"
+	@echo ""
+	@echo "Testing Fedra Sans Pro with latex+dvips..."
+	$(latex) -output-directory $(testdir) "\input{test-$(pkg)}"
+	$(dvips) -u $(mapfile) $(testdir)/test-$(pkg).dvi -o $(testdir)/test-$(pkg).ps
+	@echo ""
+	@echo "Testing Fedra Sans Pro with lualatex..."
+	$(lualatex) -output-directory $(testdir) -jobname test-$(pkg)-luatex "\directlua{pdf.mapfile('$(mapfile)')}\input{test-$(pkg)}"
+else
+	@echo "Fedra Sans Pro not installed."
+endif
+ifneq ($(filter $(call fullfamily,alt)-%,$(fonts_up)),)
+	@echo "Testing Fedra Sans Alt Pro with pdflatex..."
+	$(pdflatex) -output-directory $(testdir) "\pdfmapfile{$(mapfile)}\input{test-$(pkg)-alt}"
+	@echo ""
+	@echo "Testing Fedra Sans Alt Pro with latex+dvips..."
+	$(latex) -output-directory $(testdir) "\input{test-$(pkg)-alt}"
+	$(dvips) -u $(mapfile) $(testdir)/test-$(pkg)-alt.dvi -o $(testdir)/test-$(pkg)-alt.ps
+	@echo ""
+	@echo "Testing Fedra Sans Alt Pro with lualatex..."
+	$(lualatex) -output-directory $(testdir) -jobname test-$(pkg)-alt-luatex "\directlua{pdf.mapfile('$(mapfile)')}\input{test-$(pkg)-alt}"
+else
+	@echo "Fedra Sans Alt Pro not installed."
+endif
 
 # rules for rebuilding the documentation
 
@@ -345,6 +379,7 @@ clean:
 	$(RM) $(outdirs)
 	$(RM) $(styfiles)
 	$(RM) $(fdfiles)
+	$(RM) $(testfiles)
 	$(RM) $(tempfiles)
 
 .PHONY: maintainer-clean
