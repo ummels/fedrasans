@@ -716,7 +716,6 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % This options redefines the blackboard bold alphabet to use Fedra
 % Serif's blackboard letters.
 %    \begin{macrocode}
-%
 \fdrss@boolkey{fedrabb}{%
   \iffdrss@fedrabb
     \renewcommand\fdrss@load@bb{%
@@ -838,7 +837,6 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 %
 % The font selection commands such as |\figureversion| and
 % |\textssc| are provided by the \pkg{fontaxes} package.
-%
 %    \begin{macrocode}
 \IfFileExists{fontaxes.sty}{
   \RequirePackage{fontaxes}[2007/03/31]
@@ -849,7 +847,6 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \subsection{Math font setup}
 %
 % We use FdSymbol for most mathematical symbols.
-%
 %    \begin{macrocode}
 \iffdrss@math
   \RequirePackage[scale=0.9,opstyle=sans]{fdsymbol}[2011/11/01]
@@ -866,7 +863,6 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
     \fi
   }
 %    \end{macrocode}
-%
 % Redefine the standard math versions |normal| and |bold|.
 %    \begin{macrocode}
   \DeclareSymbolFont{operators}{T1}{\fdrss@mathfamily}{m}{n}
@@ -1400,6 +1396,7 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
   \csname #1\endcsname
 }
 %    \end{macrocode}
+%
 % \subsection{Options}
 %
 % These are the default values if it is impossible to process options.
