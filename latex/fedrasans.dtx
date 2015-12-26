@@ -130,7 +130,7 @@
 %</driver>
 %\fi
 %
-% \CheckSum{1110}
+% \CheckSum{1140}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -387,15 +387,17 @@
 %
 % \subsection{Dingbats}
 %
-% Assuming that the \pkg{pifont} package is loaded, you can access Fedra
-% Serif's ornamental characters via:
+% Fedra Sans Pro provides a large set of ornamental characters, which can be
+% typeset using the following command:
 % \begin{quote}
-%   |\Pisymbol{FedraSansPro-Pi}|\marg{number}
+%   |\ding|\marg{number}
 % \end{quote}
+% More commands are made available by the \pkg{pifont} package, which is
+% automatically loaded if present.
 % The available glyphs are listed in Table~\ref{table:dingbats}.
 % \begin{table}
 % \figureversion{tabular}\centering
-% \newcommand*\showding[1]{#1 & \Pisymbol{FedraSansAltPro-Pi}{#1}}\relax
+% \newcommand*\showding[1]{#1 & \ding{#1}}\relax
 % \begin{tabular}{@{}*{4}{r@{\quad}l}@{}}
 % \toprule
 %  number & glyph & number & glyph & number & glyph & number & glyph\\
@@ -646,6 +648,7 @@
 \newcommand\fdrss@textfamily{\fdrss@family-\fdrss@textfig}
 \newcommand\fdrss@mathfamily{\fdrss@family-\fdrss@mathfig}
 \newcommand\fdrss@mathtfamily{\fdrss@family-T\fdrss@mathfig}
+\newcommand\fdrss@pifamily{\fdrss@family-Pi}
 \newcommand\fdrss@mathshape{it}
 %    \end{macrocode}
 %
@@ -700,7 +703,7 @@
 \fdrss@boolkey{fedrabb}{%
   \iffdrss@fedrabb
     \renewcommand\fdrss@load@bb{%
-      \DeclareMathAlphabet\mathbb{U}{FedrSerifPro\fdrsf@variant-BB}{m}{n}%
+      \DeclareMathAlphabet\mathbb{U}{\fdrsf@family-BB}{m}{n}%
       \renewcommand\Bbbk{\mathbb{k}}%
     }%
   \fi
@@ -755,9 +758,9 @@
 \RequirePackage[scale=0.9]{fedrasans-fd}
 \@ifpackageloaded{textcomp}{}{\RequirePackage{textcomp}}
 \renewcommand\sfdefault{\fdrss@textfamily}
-\@for\fdrss@@family:=FedraSansPro,FedraSansAltPro\do{%
+\@for\fdrss@fam:=FedraSansPro,FedraSansAltPro\do{%
   \@for\fdrss@fig:=LF,TLF,OsF,TOsF\do{%
-    \DeclareEncodingSubset{TS1}{\fdrss@@family-\fdrss@fig}{1}%
+    \DeclareEncodingSubset{TS1}{\fdrss@fam-\fdrss@fig}{1}%
   }%
 }
 %    \end{macrocode}
@@ -981,6 +984,25 @@
   \fdrss@greek@letter{varbackepsilon}{"AB}{"B3}
   \fdrss@greek@letter{eth}{"AC}{"B4}
 \fi
+%    \end{macrocode}
+%
+% \subsection{Dingbats}
+%
+% We redefine some of the commands provided by the \pkg{pifont} package
+% to replace Zapf Dingbats by Fedra Serif's dingbats font.
+%    \begin{macrocode}
+\IfFileExists{pifont.sty}{
+  \RequirePackage{pifont}[2005/04/12]
+  \renewcommand{\ding}{\Pisymbol{\fdrss@pifamily}}
+  \renewcommand{\dingfill}{\Pifill{\fdrss@pifamily}}
+  \renewcommand{\dingline}{\Piline{\fdrss@pifamily}}
+  \renewenvironment{dinglist}[1]{\begin{Pilist}{\fdrss@pifamily}{##1}}%
+    {\end{Pilist}}
+  \renewenvironment{dingautolist}[1]{\begin{Piautolist}{\fdrss@pifamily}{##1}}%
+    {\end{Piautolist}}
+}{
+  \newcommand{\ding}[1]{{\usefont{U}{\fdrss@pifamily}{m}{n}\char##1}}
+}
 %    \end{macrocode}
 %
 % \subsection{Bullet figures}
