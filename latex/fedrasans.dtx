@@ -194,7 +194,7 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % use the option \option{alt} to select Fedra Sans Alt Pro.
 % In order to use Fedra Sans as the main font for the document
 % (not only when |\sffamily| is selected), you can use the option
-% |sfdefault|.
+% \option{sfdefault}.
 % For all available options, see Section~\ref{sec:options}.
 %
 % \subsubsection*{Acknowledgements}
@@ -210,19 +210,19 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % math fonts in the middle of a document, care has to be taken
 % wich of the two packages is loaded with math support. In particular, if
 % the \pkg{fedrasans} package is loaded with math support (i.e.\ using 
-% the |sfdefault| or |math| option), then the \pkg{fedraserif} package
-% must be loaded with the option |math=false|, or an error will occur.
+% the \option{sfdefault} or \option{math} option), then the \pkg{fedraserif}
+% package must be loaded with the option |math=false|, or an error will occur.
 %
 % In order to use Fedra Sans as a math font, you need to have the
 % \pkg{fdsymbol} package (version~0.7 or higher) installed. Apart from
 % \pkg{fdsymbol}, the \pkg{fedrasans} package automatically loads the
 % packages \pkg{textcomp} and (if math support is enabled) \pkg{amsmath}.
-% Additionally, the \pkg{fontaxes} package is loaded if it is present in
-% your \LaTeX\ installation.
+% Additionally, the packages \pkg{fontaxes} and \pkg{pifont} are loaded if
+% present inyour \LaTeX\ installation.
 % If you want to pass options to these packages, you can
 % either load these packages beforehand, or you can include the options
-% in the |\documentclass| command. If the \option{math} option is
-% used, the \pkg{fedrasans} package is \emph{not} compatible with
+% in the |\documentclass| command. If math support is enabled,
+% the \pkg{fedrasans} package is \emph{not} compatible with
 % \pkg{amssymb} and \pkg{amsfonts} (since \pkg{fdsymbol} is not).
 %
 % \section{Options}\label{sec:options}
@@ -239,16 +239,16 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \toprule
 % Key & Values & Section \\
 % \midrule
-% |alt| & |true|, |false|* & \ref{sec:variants} \\
-% |boldweight| & |Medium|*, |Bold|, |auto| & \ref{sec:weights} \\
-% |fedrabb| & |true|, |false|* & \ref{sec:mathbb} \\
-% |footnotemarks| & |true|, |false|* & \ref{sec:footnotes} \\
-% |figures| & |lining|* (|lf|), |text| (|osf|) & \ref{sec:figures} \\
-% |math| & |true|, |false|* & \ref{sec:math} \\
-% |math-style| & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
-% |normalweight| & |Book|*, |Demi|, |auto| & \ref{sec:weights} \\
-% |sfdefault| & |true|, |false|* & \ref{sec:intro},\,\ref{sec:math} \\
-% |stdmathdigits| & |true|, |false|* & \ref{sec:mathdigits} \\
+% \option{alt} & |true|, |false|* & \ref{sec:variants} \\
+% \option{boldweight} & |Medium|*, |Bold|, |auto| & \ref{sec:weights} \\
+% \option{fedrabb} & |true|, |false|* & \ref{sec:mathbb} \\
+% \option{footnotemarks} & |true|, |false|* & \ref{sec:footnotes} \\
+% \option{figures} & |lining|* (|lf|), |text| (|osf|) & \ref{sec:figures} \\
+% \option{math} & |true|, |false|* & \ref{sec:math} \\
+% \option{math-style} & |tex|*, |iso|, |french| & \ref{sec:mathletters} \\
+% \option{normalweight} & |Book|*, |Demi|, |auto| & \ref{sec:weights} \\
+% \option{sfdefault} & |true|, |false|* & \ref{sec:intro},\,\ref{sec:math} \\
+% \option{stdmathdigits} & |true|, |false|* & \ref{sec:mathdigits} \\
 % \bottomrule
 % \end{tabular}
 % \caption{\label{tab:options}Summary of options}
@@ -263,7 +263,7 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % conservative than the original variant, which features a long f,
 % diamond-shaped dots, open counters, as well as a few other characteristics.
 % By default, the package use the original variant. If you prefer the
-% alternative variant, you can select it by passing the option |alt|.
+% alternative variant, you can select it by passing the option \option{alt}.
 %
 % \subsection{Encodings}\label{sec:encodings}
 %
@@ -299,11 +299,11 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \caption{\label{tab:weights}Summary of font weights}
 % \end{table}
 % Of these, Book and Demi can be used as the standard text font, while Medium
-% and Bold can be used for bold text. The option keys |normalweight| and
-% |boldweight| allow to control which weights are used for the standard
+% and Bold can be used for bold text. The option keys \option{normalweight} and
+% \option{boldweight} allow to control which weights are used for the standard
 % \LaTeX\ font series |m| and |b| (or |bx|), selected by |\mdseries| and
 % |\bfseries|, respectively. For example, to use the Demi
-% weight as the standard text font, use the option |normalweight=Demi|.
+% weight as the standard text font, use the option \option{normalweight=Demi}.
 % By default, only the Book and the Medium weights are used. Additionally,
 % both keys can be set to the value |auto|, which selects a weight depending
 % on the font size (Book and Medium for normal and large sizes, Demi and
@@ -341,10 +341,10 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \subsection{Figures}\label{sec:figures}
 %
 % Fedra Sans Pro offers four main figure versions (see \ref{tab:figures}).
-% On the one hand, one
+% On the one hand, you
 % can choose between \emph{lining figures} and \emph{text figures}, also known
 % as \emph{old-style figures}.
-% On the other hand, one can choose between
+% On the other hand, you can choose between
 % \emph{proportional figures} and \emph{tabular figures}.
 % \begin{table}
 % \centering
@@ -362,8 +362,8 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \end{table}
 %
 % By default, proportional lining figures are used throughout the document.
-% If you want to use text figures instead, use the option |figures=text| or
-% |figures=osf|.
+% If you want to use text figures instead, use the option \option{figures=text}
+% or \option{figures=osf}.
 %
 % Assuming that the \pkg{fontaxes} package is installed on your system, you
 % can use
@@ -398,8 +398,8 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 %
 % \subsection{Footnotes}\label{sec:footnotes}
 %
-% By setting the option |footnotemarks|, footnote marks are set using special
-% characters designed for this purpose, i.e.\ 
+% By setting the option \option{footnotemarks}, footnote marks are set using
+% special characters designed for this purpose, i.e.\ 
 % {\fontfamily{FedraSansAltPro-Extra}\fontencoding{U}\selectfont 1,a} instead
 % of \textsuperscript{1,a}. However, this only works for footnote marks that
 % consist of figures and the lowercase letters a--z.
@@ -479,8 +479,8 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % By default, we only change the math font to Fedra Sans Pro (with mathematical
 % symbols taken from FdSymbol) if the option |sfdefault| has been selected.
 % In order to allow for a more fine-grained control, you can enable or disable
-% math support using the |math| option. Note that all other options described in
-% this section only have an effect if math support is enabled.
+% math support using the \option{math} option. Note that all other options
+% described in this section only have an effect if math support is enabled.
 %
 % \subsection{Letters}\label{sec:mathletters}
 %
@@ -489,13 +489,13 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % This differs from the \acro{ISO} standards \acro{ISO31-0:1992} to
 % \acro{ISO31-13:1992}, which mandate italics in this case. While
 % the package employs the \TeX\ tradition by default, you can select
-% the \acro{ISO} behaviour by setting the option |math-style=iso|.
+% the \acro{ISO} behaviour by setting the option \option{math-style=iso}.
 % Independently of this option, you can alyways select upright and
 % italic greek letters using the commands |\upalpha|, |\italpha|,
-% |\upGamma|, |\itGamma|, etc. Additionally, the |math-style| key
+% |\upGamma|, |\itGamma|, etc. Additionally, the \option{math-style} key
 % can take the value |french|, in which case all Greek and
 % uppercase roman letters are typeset upright. For an illustration
-% of the differences between the three values for |math-style|,
+% of the differences between the three values for \option{math-style},
 % see Table~\ref{tab:math-styles}.
 % \begin{table}
 % \centering
@@ -541,9 +541,9 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \subsection{Digits}\label{sec:mathdigits}
 %
 % By default, digits in math mode are typeset in the default figure version
-% for text mode (as~selected by the |figures| key). To use lining figures
-% in math mode even if |figures=text| is active, set the option
-% |stdmathdigits|.
+% for text mode (as~selected by the \option{figures} key). To use lining
+% figures in math mode even if \option{figures=text} is active, set the option
+% \option{stdmathdigits}.
 %
 % Apart from the standard math versions |normal| and |bold|, the package
 % introduces two new math versions |tabular| and |boldtabular|, in which
@@ -552,7 +552,7 @@ Test \emph{Test} $\varbeta$ $\upvarbeta$
 % \subsection{Blackboard characters}\label{sec:mathbb}
 %
 % If you also have the \pkg{fedraserif} package installed, you can
-% use the option |fedrabb| to change the math blackboard alphabet
+% use the option \option{fedrabb} to change the math blackboard alphabet
 % to Fedra Serif. See the documentation of the \pkg{fedraserif} package
 % for more information. Note that for this option to work, the
 % \pkg{fedraserif} package must be loaded \emph{before} the
