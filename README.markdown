@@ -78,9 +78,9 @@ This work has the LPPL maintenance status `maintained'.
 
 The Current Maintainer of this work is Michael Ummels.
 
-This work consists of the files fedraserif.dtx, fedraserif.ins and
-the derived files listed in fedraserif.ins as well as the
-documentation file fedraserif.pdf.
+This work consists of the files fedrasans.dtx, fedrasans.ins and
+the derived files listed in fedrasans.ins as well as the
+documentation file fedrasans.pdf.
 
 All other files distributed with these sources are in the public domain.
 
