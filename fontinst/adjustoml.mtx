@@ -50,8 +50,8 @@
 \adjustmetrics{UPpartialdiff}{0}{0}{0}{-20}{0}
 \adjustmetrics{UPlscript}{0}{10}{0}{40}{0}
 \adjustmetrics{UPhbar}{20}{20}{20}{-180}{0}
-%\adjustmetrics{UPnabla}{20}{50}{0}{0}{0}
-%\adjustmetrics{UPmho}{20}{20}{20}{0}{0}
+\adjustmetrics{UPnabla}{20}{50}{0}{0}{0}
+\adjustmetrics{UPmho}{20}{20}{20}{0}{0}
 \adjustmetrics{UPdigamma}{0}{0}{0}{20}{0}
 \adjustmetrics{UPbackepsilon}{0}{0}{0}{-30}{0}
 \adjustmetrics{UPbackepsilon1}{0}{0}{0}{-30}{0}
