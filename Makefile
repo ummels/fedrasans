@@ -103,6 +103,14 @@ fdfiles := $(foreach enc,$(encodings) OML,$(foreach var,$(variants),\
 testfiles := $(latexdir)/test-$(pkg).tex $(latexdir)/test-$(pkg)-alt.tex
 tempfiles := $(addprefix $(latexdir)/,$(pkg).aux $(pkg).log $(pkg).out $(pkg).toc $(pkg).hd)
 
+# inform about which fonts are being processed
+
+ifneq ($(strip $(otffiles)),)
+$(info Processing OTF files: $(otffiles))
+else
+$(warning No OTF files matching the name $(fontname)Pro-*.otf or $(fontname)AltPro-*.otf found. Have you copied the fonts into the root directory?)
+endif
+
 # create output directories
 
 ifeq (,$(findstring clean,$(MAKECMDGOALS)))
