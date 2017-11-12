@@ -63,6 +63,19 @@ Finally, you need to activate the map file:
 
 For a system-wide installation, replace updmap by updmap-sys.
 
+Compatibility
+-------------
+
+This package has only been tested with version 4.5 (2012) of Fedra Sans Pro.
+Some glyphs might be incorrect or missing when an installation is performed
+with an older version of the fonts.
+
+To find out the version of the fonts in your environment, run
+
+    otfinfo -v
+
+on one of the OpenType font files.
+
 License
 -------
 
