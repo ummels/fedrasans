@@ -87,8 +87,8 @@ lc = $(subst A,a,$(subst B,b,$(subst C,c,$(subst D,d,$(subst E,e,$(subst F,f,$(s
 # more variables
 
 otffiles_in := $(wildcard $(fontname)*.otf)
-otffiles_up := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(fontname)$(var)Pro-%.otf)))
-otffiles_it := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(fontname)$(var)Pro-%Italic.otf)))
+otffiles_up := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(call fullfamily,$(var))-%.otf)))
+otffiles_it := $(filter $(otffiles_in),$(foreach var,$(variants),$(weights:%=$(call fullfamily,$(var))-%Italic.otf)))
 otffiles := $(otffiles_up) $(otffiles_it)
 fonts_up := $(foreach file,$(otffiles_up),$(basename $(file)))
 fonts_it := $(foreach file,$(otffiles_it),$(basename $(file)))
