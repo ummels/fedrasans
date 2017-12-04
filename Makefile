@@ -216,7 +216,7 @@ type1: $(pfbfiles)
 # rules for building map file and encoding files
 
 glyphlist:
-	$(TOUCH) $@
+	echo -e "/a\n/a.superior\n/orn.01" > $@
 
 .PHONY: dvips
 dvips: $(mapfile) $(encfiles)
